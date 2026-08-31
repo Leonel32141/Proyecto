@@ -1,1 +1,58 @@
 
+//Primera cosulta 
+SELECT 
+    v.patente, 
+    v.marca, 
+    v.modelo, 
+    c.nombre_categoria, 
+    c.tarifa_base_dia
+FROM vehiculo v
+INNER JOIN categoria_vehiculo c ON v.id_categoria = c.id_categoria
+WHERE v.estado = 'DISPONIBLE';
+
+
+//Segunda consulta
+SELECT 
+    u.nombre, 
+    u.apellido, 
+    u.email, 
+    u.telefono, 
+    c.dni, 
+    c.licencia_conducir
+FROM cliente c
+INNER JOIN usuario u ON c.id_cliente = u.id_usuario;
+
+//Tercera consulta
+SELECT 
+    r.id_alquiler, 
+    u.nombre AS nombre_cliente, 
+    u.apellido AS apellido_cliente, 
+    v.patente, 
+    v.modelo, 
+    r.fecha_inicio_pautada, 
+    r.fecha_fin_pautada
+FROM reserva_alquiler r
+INNER JOIN cliente c ON r.id_cliente = c.id_cliente
+INNER JOIN usuario u ON c.id_cliente = u.id_usuario
+INNER JOIN vehiculo v ON r.id_vehiculo = v.id_vehiculo
+WHERE r.estado_reserva = 'EN_CURSO';
+
+//Cuarta consulta
+SELECT 
+    e.legajo, 
+    u.nombre, 
+    u.apellido, 
+    s.nombre AS nombre_sucursal, 
+    e.salario
+FROM empleado e
+INNER JOIN usuario u ON e.id_empleado = u.id_usuario
+INNER JOIN sucursal s ON e.id_sucursal = s.id_sucursal;
+
+
+//Quinta consulta
+SELECT 
+    metodo_pago, 
+    SUM(monto) AS total_recaudado
+FROM pago
+WHERE estado_pago = 'APROBADO'
+GROUP BY metodo_pago;
