@@ -57,6 +57,7 @@ CREATE TABLE modelos (
     id_marca INT NOT NULL,
     nombre_modelo VARCHAR(50) NOT NULL,
     anio INT,
+    imagen VARCHAR(100),
     CONSTRAINT fk_modelos_marcas FOREIGN KEY (id_marca) 
         REFERENCES marcas(id_marca)
 ) ENGINE=InnoDB;
