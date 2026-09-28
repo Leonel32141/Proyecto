@@ -137,7 +137,7 @@ INSERT IGNORE INTO modelos (id_modelo, id_marca, nombre_modelo, anio, imagen) VA
 (29, 8, 'CB300R', 2024, 'CB300R_2024.jpg'),
 
 -- Motos Yamaha
-(30, 9, 'YBR 125', 2022, 'YBR125_2022
+(30, 9, 'YBR 125', 2022, 'YBR125_2022.jpg');
 
 -- 7. CATEGORIAS_VEHICULOS
 INSERT IGNORE INTO categorias_vehiculos (id_categoria, nombre_categoria, descripcion, tarifa_base_dia) VALUES
