@@ -18,22 +18,118 @@ INSERT INTO clientes (id_cliente, dni, licencia_conducir, domicilio) VALUES
 (3, '38444555', 'B1-38444555', 'Av. Rivadavia 4500, CABA'),
 (4, '39555666', 'B1-39555666', 'Calle Rosario 120, CABA');
 
--- 4. SUCURSALES
-INSERT INTO sucursales (id_sucursal, nombre, direccion, ciudad) VALUES
-(1, 'Sucursal Caballito', 'Av. Acoyte 500', 'Buenos Aires'),
-(2, 'Sucursal Palermo', 'Av. Santa Fe 3200', 'Buenos Aires');
+INSERT INTO sucursales (id_sucursal, nombre, direccion, ciudad, activa) VALUES
+-- 1. SUCURSAL CENTRAL (CABA)
+(1, 'Central - Microcentro', 'Av. Corrientes 800', 'CABA', TRUE),
 
--- 5. MARCAS
+-- 2. CABA (17 Sucursales)
+(2, 'Sucursal Caballito', 'Av. Rivadavia 5100', 'CABA', TRUE),
+(3, 'Sucursal Palermo', 'Av. Santa Fe 3400', 'CABA', TRUE),
+(4, 'Sucursal Belgrano', 'Av. Cabildo 2100', 'CABA', TRUE),
+(5, 'Sucursal Flores', 'Av. Gaona 2800', 'CABA', TRUE),
+(6, 'Sucursal Villa Crespo', 'Av. Corrientes 4800', 'CABA', TRUE),
+(7, 'Sucursal Almagro', 'Av. Medrano 600', 'CABA', TRUE),
+(8, 'Sucursal Recoleta', 'Av. Las Heras 2200', 'CABA', TRUE),
+(9, 'Sucursal San Telmo', 'Av. Paseo Colón 700', 'CABA', TRUE),
+(10, 'Sucursal Barracas', 'Av. Montes de Oca 1100', 'CABA', TRUE),
+(11, 'Sucursal Devoto', 'Av. Beiró 3800', 'CABA', TRUE),
+(12, 'Sucursal Nuñez', 'Av. del Libertador 6500', 'CABA', TRUE),
+(13, 'Sucursal Liniers', 'Av. Rivadavia 11500', 'CABA', TRUE),
+(14, 'Sucursal Boedo', 'Av. San Juan 3500', 'CABA', TRUE),
+(15, 'Sucursal Saavedra', 'Av. Balbín 4000', 'CABA', TRUE),
+(16, 'Sucursal Parque Patricios', 'Av. Caseros 2900', 'CABA', TRUE),
+(17, 'Sucursal Mataderos', 'Av. Juan B. Alberdi 6000', 'CABA', TRUE),
+(18, 'Sucursal Villa Urquiza', 'Av. Triunvirato 4500', 'CABA', TRUE),
+
+-- 3. AMBA - ZONA NORTE (10 Sucursales)
+(19, 'Sucursal Vicente López', 'Av. Maipú 1500', 'Vicente López', TRUE),
+(20, 'Sucursal Olivos', 'Av. del Libertador 2400', 'Olivos', TRUE),
+(21, 'Sucursal San Isidro', 'Av. Centenario 800', 'San Isidro', TRUE),
+(22, 'Sucursal Martínez', 'Av. Santa Fe 1800', 'Martínez', TRUE),
+(23, 'Sucursal San Fernando', 'Av. Constitución 1100', 'San Fernando', TRUE),
+(24, 'Sucursal Tigre', 'Av. Cazón 1200', 'Tigre', TRUE),
+(25, 'Sucursal Pilar', 'Panamericana Km 50', 'Pilar', TRUE),
+(26, 'Sucursal Escobar', 'Av. Tapia de Cruz 700', 'Escobar', TRUE),
+(27, 'Sucursal San Martín', 'Av. San Martín 1900', 'San Martín', TRUE),
+(28, 'Sucursal Villa Ballester', 'Calle Lacroze 4800', 'San Martín', TRUE),
+
+-- 4. AMBA - ZONA OESTE (10 Sucursales)
+(29, 'Sucursal Morón', 'Av. Rivadavia 18200', 'Morón', TRUE),
+(30, 'Sucursal Castelar', 'Av. Arias 2300', 'Castelar', TRUE),
+(31, 'Sucursal Ramos Mejía', 'Av. de Mayo 800', 'Ramos Mejía', TRUE),
+(32, 'Sucursal San Justo', 'Av. Illia 2500', 'San Justo', TRUE),
+(33, 'Sucursal Ituzaingó', 'Av. Néstor Kirchner 21500', 'Ituzaingó', TRUE),
+(34, 'Sucursal Merlo', 'Av. del Libertador 600', 'Merlo', TRUE),
+(35, 'Sucursal Moreno', 'Av. Victorica 1100', 'Moreno', TRUE),
+(36, 'Sucursal Hurlingham', 'Av. Jauretche 1400', 'Hurlingham', TRUE),
+(37, 'Sucursal El Palomar', 'Av. Rosales 1200', 'El Palomar', TRUE),
+(38, 'Sucursal Caseros', 'Av. San Martín 2600', 'Caseros', TRUE),
+
+-- 5. AMBA - ZONA SUR (10 Sucursales)
+(39, 'Sucursal Avellaneda', 'Av. Mitre 1400', 'Avellaneda', TRUE),
+(40, 'Sucursal Quilmes', 'Peatonal Rivadavia 300', 'Quilmes', TRUE),
+(41, 'Sucursal Lanús', 'Av. Hipólito Yrigoyen 4500', 'Lanús', TRUE),
+(42, 'Sucursal Lomas de Zamora', 'Calle Boedo 300', 'Lomas de Zamora', TRUE),
+(43, 'Sucursal Banfield', 'Av. Alsina 800', 'Banfield', TRUE),
+(44, 'Sucursal Temperley', 'Av. Meeks 1200', 'Temperley', TRUE),
+(45, 'Sucursal Adrogué', 'Av. Espora 700', 'Adrogué', TRUE),
+(46, 'Sucursal Berazategui', 'Calle 14 nro 4500', 'Berazategui', TRUE),
+(47, 'Sucursal Florencio Varela', 'Av. San Martín 2800', 'Florencio Varela', TRUE),
+(48, 'Sucursal Ezeiza', 'Av. Fair 1100', 'Ezeiza', TRUE);
+
+-- MARCAS
 INSERT INTO marcas (id_marca, nombre_marca) VALUES
 (1, 'Toyota'),
 (2, 'Ford'),
-(3, 'Volkswagen');
+(3, 'Volkswagen'),
+(4, 'Chevrolet'),
+(5, 'Peugeot'),
+(6, 'Fiat'),
+(7, 'Renault'),
+(8, 'Honda'),
+(9, 'Yamaha');
 
--- 6. MODELOS
+-- MODELOS (30 modelos entre autos y motos)
 INSERT INTO modelos (id_modelo, id_marca, nombre_modelo, anio) VALUES
+-- Autos Toyota
 (1, 1, 'Corolla', 2023),
-(2, 2, 'Ranger', 2022),
-(3, 3, 'Gol Trend', 2021);
+(2, 1, 'Yaris', 2022),
+(3, 1, 'Hilux', 2024),
+(4, 1, 'Etios', 2021),
+-- Autos Ford
+(5, 2, 'Ranger', 2023),
+(6, 2, 'Ka', 2021),
+(7, 2, 'Focus', 2020),
+(8, 2, 'Territory', 2023),
+-- Autos Volkswagen
+(9, 3, 'Gol Trend', 2022),
+(10, 3, 'Polo', 2023),
+(11, 3, 'Amarok', 2024),
+(12, 3, 'T-Cross', 2023),
+(13, 3, 'Taos', 2024),
+-- Autos Chevrolet
+(14, 4, 'Onix', 2022),
+(15, 4, 'Cruze', 2023),
+(16, 4, 'Tracker', 2023),
+(17, 4, 'S10', 2024),
+-- Autos Peugeot
+(18, 5, '208', 2023),
+(19, 5, '2008', 2022),
+(20, 5, '3008', 2023),
+-- Autos Fiat
+(21, 6, 'Cronos', 2023),
+(22, 6, 'Toro', 2024),
+(23, 6, 'Mobi', 2022),
+-- Autos Renault
+(24, 7, 'Sandero', 2022),
+(25, 7, 'Duster', 2023),
+(26, 7, 'Logan', 2021),
+-- Motos Honda
+(27, 8, 'XR 150L', 2023),
+(28, 8, 'Wave 110S', 2023),
+(29, 8, 'CB300R', 2024),
+-- Motos Yamaha
+(30, 9, 'YBR 125', 2022);
 
 -- 7. CATEGORIAS_VEHICULOS
 INSERT INTO categorias_vehiculos (id_categoria, nombre_categoria, descripcion, tarifa_base_dia) VALUES
@@ -75,3 +171,488 @@ INSERT INTO opcionales_extras (id_extra, nombre_extra, descripcion, precio_diari
 -- 14. ALQUILERES_EXTRAS
 INSERT INTO alquileres_extras (id_alquiler, id_extra, cantidad) VALUES
 (1, 2, 1);
+
+-- ============================================================
+-- DISTRIBUCIÓN DE VEHÍCULOS EN LAS 48 SUCURSALES
+-- ============================================================
+
+-- Sucursal 1: Central (10 Vehículos)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('CEN-001', 1, 3, 1, 12000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CEN-002', 3, 5, 1, 25000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CEN-003', 11, 5, 1, 18000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CEN-004', 15, 3, 1, 30000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CEN-005', 18, 2, 1, 15000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CEN-006', 21, 3, 1, 22000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CEN-007', 25, 4, 1, 28000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CEN-008', 27, 1, 1, 5000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CEN-009', 29, 1, 1, 3500, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CEN-010', 30, 1, 1, 4200, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Carga masiva para las 47 sucursales restantes (Sucursales 2 a 48, con 7 vehículos cada una)
+-- CABA: Sucursales 2 a 18
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+-- Sucursal 2 (Caballito)
+('CAB-001', 2, 2, 2, 14000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAB-002', 9, 2, 2, 45000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAB-003', 21, 3, 2, 19000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAB-004', 12, 4, 2, 21000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAB-005', 28, 1, 2, 8000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAB-006', 30, 1, 2, 9500, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAB-007', 14, 2, 2, 11200, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+
+-- Sucursal 3 (Palermo)
+('PAL-001', 1, 3, 3, 11000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PAL-002', 5, 5, 3, 33000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PAL-003', 10, 2, 3, 16000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PAL-004', 16, 4, 3, 27000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PAL-005', 19, 4, 3, 23000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PAL-006', 27, 1, 3, 6200, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PAL-007', 29, 1, 3, 4100, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+
+-- Sucursal 4 (Belgrano)
+('BEL-001', 4, 2, 4, 18000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BEL-002', 8, 4, 4, 22000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BEL-003', 13, 4, 4, 15000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BEL-004', 18, 2, 4, 19500, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BEL-005', 22, 5, 4, 31000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BEL-006', 28, 1, 4, 7200, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BEL-007', 24, 2, 4, 25000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+
+-- Sucursal 5 (Flores)
+('FLO-001', 6, 2, 5, 39000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('FLO-002', 14, 2, 5, 12000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('FLO-003', 21, 3, 5, 28000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('FLO-004', 25, 4, 5, 34000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('FLO-005', 23, 2, 5, 42000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('FLO-006', 27, 1, 5, 8900, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('FLO-007', 30, 1, 5, 6300, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- ============================================================
+-- SUCURSALES CABA CONTINUACIÓN (6 a 18)
+-- ============================================================
+
+-- Sucursal 6 (Villa Crespo)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('VCR-001', 2, 2, 6, 17000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VCR-002', 10, 2, 6, 23000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VCR-003', 15, 3, 6, 31000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VCR-004', 18, 2, 6, 14000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VCR-005', 21, 3, 6, 26000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VCR-006', 28, 1, 6, 5400, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VCR-007', 30, 1, 6, 7100, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 7 (Almagro)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('ALM-001', 1, 3, 7, 20000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ALM-002', 9, 2, 7, 41000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ALM-003', 12, 4, 7, 28000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ALM-004', 24, 2, 7, 33000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ALM-005', 27, 1, 7, 6100, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ALM-006', 29, 1, 7, 3900, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 8 (Recoleta)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('REC-001', 1, 3, 8, 13000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('REC-002', 8, 4, 8, 19000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('REC-003', 13, 4, 8, 11000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('REC-004', 15, 3, 8, 27000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('REC-005', 20, 4, 8, 16000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('REC-006', 29, 1, 8, 2800, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('REC-007', 30, 1, 8, 4900, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 9 (San Telmo)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('STE-001', 4, 2, 9, 35000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('STE-002', 10, 2, 9, 22000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('STE-003', 18, 2, 9, 18000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('STE-004', 21, 3, 9, 29000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('STE-005', 28, 1, 9, 9100, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('STE-006', 30, 1, 9, 8200, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 10 (Barracas)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('BAR-001', 3, 5, 10, 42000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BAR-002', 6, 2, 10, 48000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BAR-003', 14, 2, 10, 21000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BAR-004', 22, 5, 10, 36000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BAR-005', 25, 4, 10, 31000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BAR-006', 27, 1, 10, 7500, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BAR-007', 30, 1, 10, 6800, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 11 (Devoto)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('DEV-001', 2, 2, 11, 15000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('DEV-002', 9, 2, 11, 38000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('DEV-003', 12, 4, 11, 25000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('DEV-004', 21, 3, 11, 20000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('DEV-005', 28, 1, 11, 6700, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('DEV-006', 30, 1, 11, 5100, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 12 (Nuñez)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('NUN-001', 1, 3, 12, 16000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('NUN-002', 5, 5, 12, 29000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('NUN-003', 10, 2, 12, 19000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('NUN-004', 16, 4, 12, 24000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('NUN-005', 19, 4, 12, 22000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('NUN-006', 27, 1, 12, 4800, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('NUN-007', 29, 1, 12, 3300, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 13 (Liniers)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('LIN-001', 4, 2, 13, 41000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LIN-002', 6, 2, 13, 49000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LIN-003', 15, 3, 13, 33000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LIN-004', 23, 2, 13, 37000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LIN-005', 28, 1, 13, 8500, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LIN-006', 30, 1, 13, 9200, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 14 (Boedo)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('BOE-001', 2, 2, 14, 18000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BOE-002', 10, 2, 14, 24000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BOE-003', 18, 2, 14, 16000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BOE-004', 21, 3, 14, 22000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BOE-005', 24, 2, 14, 30000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BOE-006', 27, 1, 14, 5900, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BOE-007', 30, 1, 14, 7300, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 15 (Saavedra)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('SAA-001', 1, 3, 15, 21000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SAA-002', 9, 2, 15, 36000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SAA-003', 12, 4, 15, 27000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SAA-004', 25, 4, 15, 29000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SAA-005', 28, 1, 15, 6400, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SAA-006', 29, 1, 15, 4100, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 16 (Parque Patricios)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('PPT-001', 6, 2, 16, 44000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PPT-002', 14, 2, 16, 26000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PPT-003', 17, 5, 16, 38000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PPT-004', 21, 3, 16, 25000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PPT-005', 27, 1, 16, 8100, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PPT-006', 30, 1, 16, 6900, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PPT-007', 26, 3, 16, 32000, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 17 (Mataderos)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('MAT-001', 3, 5, 17, 39000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MAT-002', 11, 5, 17, 31000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MAT-003', 15, 3, 17, 28000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MAT-004', 22, 5, 17, 35000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MAT-005', 28, 1, 17, 7800, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MAT-006', 30, 1, 17, 8800, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 18 (Villa Urquiza)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('VUR-001', 2, 2, 18, 14000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VUR-002', 7, 3, 18, 27000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VUR-003', 12, 4, 18, 22000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VUR-004', 18, 2, 18, 17000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VUR-005', 21, 3, 18, 19000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VUR-006', 27, 1, 18, 5200, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VUR-007', 29, 1, 18, 3600, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+
+-- ============================================================
+-- AMBA - ZONA NORTE (19 a 28)
+-- ============================================================
+
+-- Sucursal 19 (Vicente López)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('VLO-001', 1, 3, 19, 15000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VLO-002', 8, 4, 19, 21000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VLO-003', 13, 4, 19, 17000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VLO-004', 15, 3, 19, 23000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VLO-005', 28, 1, 19, 6100, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VLO-006', 30, 1, 19, 5400, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 20 (Olivos)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('OLI-001', 2, 2, 20, 16000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('OLI-002', 10, 2, 20, 20000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('OLI-003', 16, 4, 20, 25000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('OLI-004', 19, 4, 20, 21000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('OLI-005', 21, 3, 20, 18000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('OLI-006', 27, 1, 20, 4300, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('OLI-007', 29, 1, 20, 3100, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 21 (San Isidro)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('SSI-001', 3, 5, 21, 15000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SSI-002', 11, 5, 21, 22000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SSI-003', 13, 4, 21, 18000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SSI-004', 16, 4, 21, 29000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SSI-005', 29, 1, 21, 2100, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SSI-006', 30, 1, 21, 3800, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 22 (Martínez)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('MAR-001', 1, 3, 22, 19000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MAR-002', 9, 2, 22, 33000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MAR-003', 15, 3, 22, 24000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MAR-004', 20, 4, 22, 21000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MAR-005', 28, 1, 22, 5700, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MAR-006', 30, 1, 22, 6200, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MAR-007', 25, 4, 22, 26000, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 23 (San Fernando)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('SFE-001', 4, 2, 23, 37000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SFE-002', 10, 2, 23, 25000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SFE-003', 18, 2, 23, 19000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SFE-004', 22, 5, 23, 34000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SFE-005', 27, 1, 23, 7100, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SFE-006', 30, 1, 23, 8300, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 24 (Tigre)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('TIG-001', 3, 5, 24, 28000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('TIG-002', 8, 4, 24, 23000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('TIG-003', 12, 4, 24, 20000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('TIG-004', 17, 5, 24, 31000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('TIG-005', 25, 4, 24, 27000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('TIG-006', 28, 1, 24, 5200, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('TIG-007', 29, 1, 24, 4600, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 25 (Pilar)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('PIL-001', 3, 5, 25, 32000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PIL-002', 5, 5, 25, 38000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PIL-003', 11, 5, 25, 27000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PIL-004', 17, 5, 25, 35000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PIL-005', 22, 5, 25, 41000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PIL-006', 27, 1, 25, 8900, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 26 (Escobar)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('ESC-001', 5, 5, 26, 43000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ESC-002', 9, 2, 26, 39000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ESC-003', 15, 3, 26, 30000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ESC-004', 25, 4, 26, 33000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ESC-005', 28, 1, 26, 9400, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ESC-006', 30, 1, 26, 8100, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ESC-007', 24, 2, 26, 36000, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 27 (San Martín)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('SMA-001', 2, 2, 27, 21000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SMA-002', 10, 2, 27, 27000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SMA-003', 18, 2, 27, 20000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SMA-004', 21, 3, 27, 24000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SMA-005', 27, 1, 27, 6300, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SMA-006', 30, 1, 27, 7200, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 28 (Villa Ballester)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('VBA-001', 4, 2, 28, 32000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VBA-002', 6, 2, 28, 46000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VBA-003', 14, 2, 28, 23000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VBA-004', 23, 2, 28, 39000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VBA-005', 28, 1, 28, 8800, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VBA-006', 30, 1, 28, 9100, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('VBA-007', 26, 3, 28, 28000, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+
+-- ============================================================
+-- AMBA - ZONA OESTE (29 a 38)
+-- ============================================================
+
+-- Sucursal 29 (Morón)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('MOR-001', 6, 2, 29, 38000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MOR-002', 10, 2, 29, 17000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MOR-003', 15, 3, 29, 25000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MOR-004', 24, 2, 29, 31000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MOR-005', 28, 1, 29, 7400, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MOR-006', 30, 1, 29, 8900, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 30 (Castelar)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('CAS-001', 2, 2, 30, 19000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAS-002', 7, 3, 30, 28000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAS-003', 12, 4, 30, 21000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAS-004', 18, 2, 30, 15000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAS-005', 21, 3, 30, 23000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAS-006', 27, 1, 30, 5800, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAS-007', 29, 1, 30, 4200, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 31 (Ramos Mejía)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('RAM-001', 1, 3, 31, 17000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('RAM-002', 9, 2, 31, 34000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('RAM-003', 15, 3, 31, 22000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('RAM-004', 19, 4, 31, 26000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('RAM-005', 28, 1, 31, 6900, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('RAM-006', 30, 1, 31, 5500, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 32 (San Justo)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('SJU-001', 4, 2, 32, 43000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SJU-002', 6, 2, 32, 51000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SJU-003', 14, 2, 32, 29000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SJU-004', 21, 3, 32, 31000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SJU-005', 23, 2, 32, 44000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SJU-006', 27, 1, 32, 9800, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('SJU-007', 30, 1, 32, 8600, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 33 (Ituzaingó)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('ITU-001', 2, 2, 33, 22000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ITU-002', 10, 2, 33, 26000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ITU-003', 18, 2, 33, 19000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ITU-004', 25, 4, 33, 32000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ITU-005', 28, 1, 33, 7100, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ITU-006', 30, 1, 33, 6400, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 34 (Merlo)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('MER-001', 6, 2, 34, 47000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MER-002', 14, 2, 34, 33000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MER-003', 21, 3, 34, 29000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MER-004', 24, 2, 34, 38000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MER-005', 27, 1, 34, 9100, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MER-006', 30, 1, 34, 9900, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MER-007', 26, 3, 34, 35000, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 35 (Moreno)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('MNO-001', 3, 5, 35, 36000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MNO-002', 5, 5, 35, 41000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MNO-003', 11, 5, 35, 31000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MNO-004', 17, 5, 35, 39000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('MNO-005', 22, 5, 35, 43000, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 36 (Hurlingham)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('HUR-001', 2, 2, 36, 18000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('HUR-002', 9, 2, 36, 35000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('HUR-003', 15, 3, 36, 27000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('HUR-004', 18, 2, 36, 16000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('HUR-005', 27, 1, 36, 6200, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('HUR-006', 30, 1, 36, 7500, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('HUR-007', 23, 2, 36, 41000, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 37 (El Palomar)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('PAL-101', 4, 2, 37, 33000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PAL-102', 10, 2, 37, 21000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PAL-103', 12, 4, 37, 25000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PAL-104', 21, 3, 37, 23000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PAL-105', 28, 1, 37, 5900, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('PAL-106', 30, 1, 37, 6800, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 38 (Caseros)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('CAS-101', 6, 2, 38, 42000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAS-102', 14, 2, 38, 27000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAS-103', 16, 4, 38, 22000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAS-104', 24, 2, 38, 34000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAS-105', 27, 1, 38, 7700, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAS-106', 29, 1, 38, 4800, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('CAS-107', 25, 4, 38, 31000, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+
+-- ============================================================
+-- AMBA - ZONA SUR (39 a 48)
+-- ============================================================
+
+-- Sucursal 39 (Avellaneda)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('AVE-001', 2, 2, 39, 19000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('AVE-002', 9, 2, 39, 41000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('AVE-003', 12, 4, 39, 24000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('AVE-004', 25, 4, 39, 29000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('AVE-005', 27, 1, 39, 5800, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('AVE-006', 30, 1, 39, 3900, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 40 (Quilmes)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('QUI-001', 1, 3, 40, 18000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('QUI-002', 5, 5, 40, 31000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('QUI-003', 10, 2, 40, 22000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('QUI-004', 15, 3, 40, 26000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('QUI-005', 21, 3, 40, 20000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('QUI-006', 28, 1, 40, 6500, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('QUI-007', 30, 1, 40, 7200, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 41 (Lanús)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('LAN-001', 4, 2, 41, 36000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LAN-002', 6, 2, 41, 45000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LAN-003', 14, 2, 41, 25000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LAN-004', 18, 2, 41, 17000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LAN-005', 27, 1, 41, 8200, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LAN-006', 29, 1, 41, 5100, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 42 (Lomas de Zamora)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('LDE-001', 2, 2, 42, 16000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LDE-002', 8, 4, 42, 23000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LDE-003', 13, 4, 42, 19000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LDE-004', 21, 3, 42, 24000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LDE-005', 24, 2, 42, 33000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LDE-006', 28, 1, 42, 7100, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('LDE-007', 30, 1, 42, 8400, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 43 (Banfield)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('BAN-001', 1, 3, 43, 21000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BAN-002', 10, 2, 43, 23000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BAN-003', 16, 4, 43, 26000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BAN-004', 23, 2, 43, 38000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BAN-005', 27, 1, 43, 6000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BAN-006', 30, 1, 43, 6700, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 44 (Temperley)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('TEM-001', 6, 2, 44, 41000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('TEM-002', 9, 2, 44, 37000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('TEM-003', 15, 3, 44, 28000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('TEM-004', 18, 2, 44, 18000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('TEM-005', 28, 1, 44, 7900, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('TEM-006', 30, 1, 44, 9300, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('TEM-007', 26, 3, 44, 31000, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 45 (Adrogué)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('ADR-001', 2, 2, 45, 17000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ADR-002', 7, 3, 45, 25000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ADR-003', 12, 4, 45, 20000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ADR-004', 21, 3, 45, 21000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ADR-005', 27, 1, 45, 5300, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('ADR-006', 29, 1, 45, 3800, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 46 (Berazategui)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('BER-001', 4, 2, 46, 39000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BER-002', 10, 2, 46, 28000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BER-003', 14, 2, 46, 31000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BER-004', 22, 5, 46, 37000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BER-005', 28, 1, 46, 8600, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BER-006', 30, 1, 46, 9100, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('BER-007', 25, 4, 46, 34000, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 47 (Florencio Varela)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('FVA-001', 6, 2, 47, 48000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('FVA-002', 11, 5, 47, 33000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('FVA-003', 15, 3, 47, 30000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('FVA-004', 24, 2, 47, 42000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('FVA-005', 27, 1, 47, 9400, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('FVA-006', 30, 1, 47, 9800, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+-- Sucursal 48 (Ezeiza)
+INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) VALUES
+('EZE-001', 3, 5, 48, 29000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('EZE-002', 5, 5, 48, 34000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('EZE-003', 12, 4, 48, 21000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('EZE-004', 16, 4, 48, 26000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('EZE-005', 21, 3, 48, 23000, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('EZE-006', 28, 1, 48, 6300, 'DISPONIBLE', '2027-01-01', '2026-12-31'),
+('EZE-007', 30, 1, 48, 5900, 'DISPONIBLE', '2027-01-01', '2026-12-31');
+
+
