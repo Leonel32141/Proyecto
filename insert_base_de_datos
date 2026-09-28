@@ -90,46 +90,54 @@ INSERT IGNORE INTO marcas (id_marca, nombre_marca) VALUES
 (9, 'Yamaha');
 
 -- MODELOS (30 modelos entre autos y motos)
-INSERT IGNORE INTO modelos (id_modelo, id_marca, nombre_modelo, anio) VALUES
+INSERT IGNORE INTO modelos (id_modelo, id_marca, nombre_modelo, anio, imagen) VALUES
 -- Autos Toyota
-(1, 1, 'Corolla', 2023),
-(2, 1, 'Yaris', 2022),
-(3, 1, 'Hilux', 2024),
-(4, 1, 'Etios', 2021),
+(1, 1, 'Corolla', 2023, 'COROLLA_2023.jpg'),
+(2, 1, 'Yaris', 2022, 'YARIS_2022.jpg'),
+(3, 1, 'Hilux', 2024, 'HILUX_2024.jpg'),
+(4, 1, 'Etios', 2021, 'ETIOS_2021.jpg'),
+
 -- Autos Ford
-(5, 2, 'Ranger', 2023),
-(6, 2, 'Ka', 2021),
-(7, 2, 'Focus', 2020),
-(8, 2, 'Territory', 2023),
+(5, 2, 'Ranger', 2023, 'RANGER_2023.jpg'),
+(6, 2, 'Ka', 2021, 'KA_2021.jpg'),
+(7, 2, 'Focus', 2020, 'FOCUS_2020.jpg'),
+(8, 2, 'Territory', 2023, 'TERRITORY_2023.jpg'),
+
 -- Autos Volkswagen
-(9, 3, 'Gol Trend', 2022),
-(10, 3, 'Polo', 2023),
-(11, 3, 'Amarok', 2024),
-(12, 3, 'T-Cross', 2023),
-(13, 3, 'Taos', 2024),
+(9, 3, 'Gol Trend', 2022, 'GOL_TREND_2022.jpg'),
+(10, 3, 'Polo', 2023, 'POLO_2023.jpg'),
+(11, 3, 'Amarok', 2024, 'AMAROK_2024.jpg'),
+(12, 3, 'T-Cross', 2023, 'T_CROSS_2023.jpg'),
+(13, 3, 'Taos', 2024, 'TAOS_2024.jpg'),
+
 -- Autos Chevrolet
-(14, 4, 'Onix', 2022),
-(15, 4, 'Cruze', 2023),
-(16, 4, 'Tracker', 2023),
-(17, 4, 'S10', 2024),
+(14, 4, 'Onix', 2022, 'ONIX_2022.jpg'),
+(15, 4, 'Cruze', 2023, 'CRUZE_2023.jpg'),
+(16, 4, 'Tracker', 2023, 'TRACKER_2023.jpg'),
+(17, 4, 'S10', 2024, 'S10_2024.jpg'),
+
 -- Autos Peugeot
-(18, 5, '208', 2023),
-(19, 5, '2008', 2022),
-(20, 5, '3008', 2023),
+(18, 5, '208', 2023, '208_2023.jpg'),
+(19, 5, '2008', 2022, '2008_2022.jpg'),
+(20, 5, '3008', 2023, '3008_2023.jpg'),
+
 -- Autos Fiat
-(21, 6, 'Cronos', 2023),
-(22, 6, 'Toro', 2024),
-(23, 6, 'Mobi', 2022),
+(21, 6, 'Cronos', 2023, 'CRONOS_2023.jpg'),
+(22, 6, 'Toro', 2024, 'TORO_2024.jpg'),
+(23, 6, 'Mobi', 2022, 'MOBI_2022.jpg'),
+
 -- Autos Renault
-(24, 7, 'Sandero', 2022),
-(25, 7, 'Duster', 2023),
-(26, 7, 'Logan', 2021),
+(24, 7, 'Sandero', 2022, 'SANDERO_2022.jpg'),
+(25, 7, 'Duster', 2023, 'DUSTER_2023.jpg'),
+(26, 7, 'Logan', 2021, 'LOGAN_2021.jpg'),
+
 -- Motos Honda
-(27, 8, 'XR 150L', 2023),
-(28, 8, 'Wave 110S', 2023),
-(29, 8, 'CB300R', 2024),
+(27, 8, 'XR 150L', 2023, 'XR150L_2023.jpg'),
+(28, 8, 'Wave 110S', 2023, 'WAVE110S_2023.jpg'),
+(29, 8, 'CB300R', 2024, 'CB300R_2024.jpg'),
+
 -- Motos Yamaha
-(30, 9, 'YBR 125', 2022);
+(30, 9, 'YBR 125', 2022, 'YBR125_2022
 
 -- 7. CATEGORIAS_VEHICULOS
 INSERT IGNORE INTO categorias_vehiculos (id_categoria, nombre_categoria, descripcion, tarifa_base_dia) VALUES
