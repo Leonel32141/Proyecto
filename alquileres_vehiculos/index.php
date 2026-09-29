@@ -137,12 +137,14 @@ if (!isset($_SESSION['id_usuario'])) {
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: background-image 1.2s ease-in-out;
+
         }
 
         .hero-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(15, 23, 42, 0.55);
+            background: rgba(15, 23, 42, 0.15);
         }
 
         .hero-contenido {
@@ -480,9 +482,13 @@ if (!isset($_SESSION['id_usuario'])) {
 
         // Slider del Banner Principal
         const imagenesBanner = [
-            'foto_vehiculos/COROLLA_2023.jpg',
-            'foto_vehiculos/HILUX_2024.jpg',
-            'foto_vehiculos/AMAROK_2024.jpg'
+            'fotos_decoracion/decoracion_1.jpg',
+            'fotos_decoracion/decoracion_2.jpg',
+            'fotos_decoracion/decoracion_3.jpg',
+            'fotos_decoracion/decoracion_4.jpg',
+            'fotos_decoracion/decoracion_5.jpg',
+            'fotos_decoracion/decoracion_6.jpg'
+             
         ];
         let index = 0;
         const heroBg = document.getElementById('inicio');
