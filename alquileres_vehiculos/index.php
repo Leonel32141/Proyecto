@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'conexion.php';
 
 if (!isset($_SESSION['id_usuario'])) {
     header("Location: login.php");
@@ -137,8 +138,6 @@ if (!isset($_SESSION['id_usuario'])) {
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background-image 1.2s ease-in-out;
-
         }
 
         .hero-overlay {
@@ -161,12 +160,12 @@ if (!isset($_SESSION['id_usuario'])) {
         .hero-contenido p { color: #60a5fa; font-size: 18px; font-weight: 500; }
         .hero-contenido .user { color: #94a3b8; font-size: 13px; margin-top: 15px; }
 
-        /* --- BANDA 2: QUIÉNES SOMOS (CON CUADRO AZUL OSCURO PARA LECTURA PERFECTA) --- */
+        /* --- BANDA 2: QUIÉNES SOMOS --- */
         .banda-oscura-institucional {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
         .texto-institucional-box {
-            background-color: #0b0f19; /* Azul muy oscuro estilo tarjeta corporativa */
+            background-color: #0b0f19;
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 16px;
             padding: 50px;
@@ -253,7 +252,7 @@ if (!isset($_SESSION['id_usuario'])) {
         }
         .btn-ver-catalogo:hover { background-color: #2563eb; }
 
-        /* --- BANDA 4: SUCURSALES (MATRIZ + LAS 48 SUCURSALES POR ZONA) --- */
+        /* --- BANDA 4: SUCURSALES --- */
         .banda-sucursales {
             background-color: #0f172a;
             color: #ffffff;
@@ -276,10 +275,10 @@ if (!isset($_SESSION['id_usuario'])) {
             margin-bottom: 45px;
         }
         .zona-bloque h3 {
-            color: #60a5fa;
+            color: #f1f6fc;
             font-size: 22px;
             margin-bottom: 20px;
-            border-left: 4px solid #3b82f6;
+            border-left: 4px solid #eaedf3;
             padding-left: 10px;
         }
 
@@ -313,6 +312,7 @@ if (!isset($_SESSION['id_usuario'])) {
                 <a href="#inicio">Inicio</a>
                 <a href="#quienes-somos">¿Quiénes somos?</a>
                 <a href="#flota">Nuestra Flota</a>
+                <a href="#flota-lujo">Flota de Lujo</a>
                 <a href="#sucursales">Red de Sucursales</a>
             </div>
         </div>
@@ -321,7 +321,7 @@ if (!isset($_SESSION['id_usuario'])) {
 
     <main>
         <!-- BANDA 1: HERO SLIDER -->
-        <section id="inicio" class="banda banda-hero" id="heroBg">
+        <section id="inicio" class="banda banda-hero">
             <div class="hero-overlay"></div>
             <div class="hero-contenido reveal">
                 <h1>LOS PIPIAUTOS</h1>
@@ -332,7 +332,7 @@ if (!isset($_SESSION['id_usuario'])) {
             </div>
         </section>
 
-        <!-- BANDA 2: QUIÉNES SOMOS (CON CUADRO AZUL OSCURO) -->
+        <!-- BANDA 2: QUIÉNES SOMOS -->
         <section id="quienes-somos" class="banda banda-oscura-institucional">
             <div class="contenedor-interno">
                 <div class="texto-institucional-box reveal">
@@ -347,12 +347,11 @@ if (!isset($_SESSION['id_usuario'])) {
             </div>
         </section>
 
-        <!-- BANDA 3: FLOTA CON "VER TODOS" + BOTONES -->
+        <!-- BANDA 3: FLOTA GENERAL -->
         <section id="flota" class="banda banda-categorias">
             <div class="contenedor-interno reveal">
                 <h2 class="titulo-seccion">Nuestra Flota de Vehículos</h2>
                 
-                <!-- Botones con Ver Todos al principio -->
                 <div class="filtros-flota">
                     <button class="btn-filtro activo" onclick="cambiarCategoria('todos', this)">Ver Todos</button>
                     <button class="btn-filtro" onclick="cambiarCategoria('compacto', this)">Compactos Urbanos</button>
@@ -361,7 +360,6 @@ if (!isset($_SESSION['id_usuario'])) {
                     <button class="btn-filtro" onclick="cambiarCategoria('moto', this)">Motocicletas</button>
                 </div>
 
-                <!-- Visor Interactivo -->
                 <div class="visor-flota-card" id="visorCard">
                     <div class="visor-imagen-container">
                         <img id="visorImg" src="foto_vehiculos/COROLLA_2023.jpg" alt="Vehículo">
@@ -369,19 +367,85 @@ if (!isset($_SESSION['id_usuario'])) {
                     <div class="visor-info">
                         <h3 id="visorTitulo">Flota General Los Pipiautos</h3>
                         <p id="visorDesc">Explorá nuestras categorías seleccionando los botones superiores. Unidades auditadas, con seguro total y listas para retirar en cualquier punto de CABA.</p>
-                        <a href="#" class="btn-ver-catalogo">Ver Catálogo Completo</a>
+                      <a href="catalogo_motos.php" class="btn-ver-catalogo">Ver Catálogo Completo</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- BANDA 4: SUCURSALES (MATRIZ + TODAS LAS ZONAS) -->
-        <section id="sucursales" class="banda banda-sucursales">
+     <?php
+// Consulta exacta para traer solo los vehículos de lujo de alta gama
+try {
+    $sql_lujo = "SELECT v.id_vehiculo, m.nombre_modelo, m.anio, m.imagen, v.patente, v.kilometraje_actual, v.estado 
+                 FROM modelos m 
+                 JOIN vehiculos v ON m.id_modelo = v.id_modelo 
+                 WHERE m.nombre_modelo IN ('Ferrari 488 GTB', 'Lamborghini Urus', 'BMW M4 Competition', 'Audi R8 V10', 'Porsche 911 Turbo S', 'Mercedes-AMG G 63', 'Chevrolet Corvette C8', 'Aston Martin Vantage', 'Maserati Levante Trofeo', 'Bentley Continental GT')";
+    $stmt_lujo = $conexion->prepare($sql_lujo);
+    $stmt_lujo->execute();
+    $vehiculos_lujo = $stmt_lujo->fetchAll(PDO::FETCH_ASSOC);
+} catch (Exception $e) {
+    $vehiculos_lujo = [];
+}
+?>
+
+        <!-- BANDA EXCLUSIVA: FLOTA DE LUJO (+25 AÑOS) -->
+        <section id="flota-lujo" class="banda" style="background: linear-gradient(135deg, #0b0f19 0%, #0f172a 100%); border-top: 3px solid #d4af37; padding: 80px 20px;">
+            <div class="contenedor-interno reveal">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <span style="background: rgba(212, 175, 55, 0.15); color: #d4af37; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; border: 1px solid rgba(212, 175, 55, 0.3);">Exclusivo Alta Gama</span>
+                    <h2 class="titulo-seccion" style="color: #ffffff; margin-top: 15px;">Flota de Lujo & Superdeportivos</h2>
+                    <p style="color: #94a3b8; font-size: 15px; max-width: 600px; margin: 0 auto;">Unidades de alta performance reservadas exclusivamente para clientes con requisitos de edad verificados.</p>
+                </div>
+
+                <?php 
+                $id_usr = $_SESSION['id_usuario'];
+                $sql_check_lujo = "SELECT c.es_apto_lujo FROM clientes c WHERE c.id_cliente = :id_usr";
+                $stmt_chk = $conexion->prepare($sql_check_lujo);
+                $stmt_chk->execute([':id_usr' => $id_usr]);
+                $datos_cliente = $stmt_chk->fetch(PDO::FETCH_ASSOC);
+                $es_apto = $datos_cliente['es_apto_lujo'] ?? 0;
+                ?>
+
+                <?php if ($es_apto == 1): ?>
+                    <!-- SI TIENE 25 AÑOS O MÁS: MUESTRA EL CATALOGO DE LUJO EN TARJETAS ESTILO VISOR -->
+                    <div style="display: flex; flex-direction: column; gap: 30px; max-width: 900px; margin: 0 auto;">
+                        <?php foreach ($vehiculos_lujo as $auto): ?>
+                            <div style="background: #111827; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; align-items: center;">
+                                <div style="width: 100%; height: 260px; background-color: #000; display: flex; align-items: center; justify-content: center; padding: 15px;">
+                                    <img src="foto_vehiculos/<?php echo htmlspecialchars($auto['imagen']); ?>" alt="<?php echo htmlspecialchars($auto['nombre_modelo']); ?>" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 8px;">
+                                </div>
+                                <div style="padding: 35px; text-align: left;">
+                                    <span style="color: #d4af37; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Modelo <?php echo $auto['anio']; ?></span>
+                                    <h3 style="color: #ffffff; font-size: 26px; margin: 8px 0 12px 0;"><?php echo htmlspecialchars($auto['nombre_modelo']); ?></h3>
+                                    <p style="color: #94a3b8; font-size: 14px; line-height: 1.6; margin-bottom: 25px;">Unidad auditada de alta performance, completamente asegurada y lista para retiro prioritario en sucursal central.</p>
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <span style="color: #10b981; font-size: 13px; font-weight: 600; background: rgba(16, 185, 129, 0.1); padding: 5px 12px; border-radius: 20px;"><?php echo htmlspecialchars($auto['estado']); ?></span>
+                                        <a href="reservar_lujo.php?id=<?php echo $auto['id_vehiculo']; ?>" style="background-color: #d4af37; color: #000000; padding: 10px 22px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px; transition: background-color 0.2s;">Reservar Lujo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php else: ?>
+                    <!-- SI ES MENOR DE 25 AÑOS: BLOQUEO ESTETICO -->
+                    <div style="background: linear-gradient(135deg, #1f2937 11%, #111827 100%); border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 16px; padding: 40px; text-align: center; max-width: 700px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+                        <div style="font-size: 40px; margin-bottom: 15px;">🔒</div>
+                        <h3 style="color: #ffffff; font-size: 24px; margin-bottom: 10px;">Acceso Restringido a Flota de Lujo</h3>
+                        <p style="color: #94a3b8; font-size: 15px; line-height: 1.6; margin-bottom: 20px;">
+                            Por políticas de seguridad de nuestra compañía y normativas de las aseguradoras para vehículos de alta gama, esta categoría se encuentra habilitada exclusivamente para conductores con <strong>25 años o más</strong>.
+                        </p>
+                        <span style="display: inline-block; background: rgba(239, 68, 68, 0.2); color: #f87171; padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 600;">Requisito etario no cumplido</span>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </section>
+
+        <!-- BANDA 4: SUCURSALES -->
+        <section id="sucursales" class="banda banda-sucursales" style="background: linear-gradient(135deg, #92c9ee 0%, #779dd3 100%); border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 90px 20px;">
             <div class="contenedor-interno reveal">
                 <h2 class="titulo-seccion" style="color: #ffffff;">Nuestra Red de Sucursales en CABA</h2>
-                <p style="text-align: center; color: #94a3b8; margin-bottom: 40px;">Conocé nuestra casa matriz y el despliegue completo de nuestras 48 sucursales.</p>
+                <p style="text-align: center; color: #eef0f3; margin-bottom: 40px;">Conocé nuestra casa matriz y el despliegue completo de nuestras 48 sucursales.</p>
 
-                <!-- SUCURSAL PRINCIPAL DESTACADA APARTE -->
                 <div class="sucursal-principal-master">
                     <span>Casa Matriz Oficial</span>
                     <h3>Sucursal Central Obelisco</h3>
@@ -480,22 +544,32 @@ if (!isset($_SESSION['id_usuario'])) {
             }
         }
 
-        // Slider del Banner Principal
-        const imagenesBanner = [
+        // Slider del Banner Principal con Precarga para evitar el parpadeo
+        const rutasBanner = [
             'fotos_decoracion/decoracion_1.jpg',
             'fotos_decoracion/decoracion_2.jpg',
             'fotos_decoracion/decoracion_3.jpg',
             'fotos_decoracion/decoracion_4.jpg',
             'fotos_decoracion/decoracion_5.jpg',
             'fotos_decoracion/decoracion_6.jpg'
-             
         ];
+
+        // Precargar imágenes en memoria
+        const imagenesPrecarghadas = [];
+        rutasBanner.forEach((ruta) => {
+            const img = new Image();
+            img.src = ruta;
+            imagenesPrecarghadas.push(img);
+        });
+
         let index = 0;
         const heroBg = document.getElementById('inicio');
+        
         function cambiarBanner() {
-            heroBg.style.backgroundImage = `url('${imagenesBanner[index]}')`;
-            index = (index + 1) % imagenesBanner.length;
+            heroBg.style.backgroundImage = `url('${rutasBanner[index]}')`;
+            index = (index + 1) % rutasBanner.length;
         }
+        
         cambiarBanner();
         setInterval(cambiarBanner, 4000);
 

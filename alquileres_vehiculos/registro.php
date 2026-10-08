@@ -5,15 +5,15 @@ $mensaje = "";
 $tipo_mensaje = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nombre           = trim($_POST['nombre']);
-    $apellido         = trim($_POST['apellido']);
-    $email            = trim($_POST['email']);
-    $password         = trim($_POST['password']);
-    $cuil             = trim($_POST['cuil']);
-    $telefono         = trim($_POST['telefono']);
-    $dni              = trim($_POST['dni']);
-    $licencia         = trim($_POST['licencia_conducir']);
-    $domicilio        = trim($_POST['domicilio']);
+    $nombre            = trim($_POST['nombre']);
+    $apellido          = trim($_POST['apellido']);
+    $email             = trim($_POST['email']);
+    $password          = trim($_POST['password']);
+    $cuil              = trim($_POST['cuil']);
+    $telefono          = trim($_POST['telefono']);
+    $dni               = trim($_POST['dni']);
+    $domicilio         = trim($_POST['domicilio']);
+    $fecha_nacimiento  = trim($_POST['fecha_nacimiento']);
 
     $cuil_limpio = str_replace('-', '', $cuil);
 
@@ -26,56 +26,70 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (!empty($telefono) && (!ctype_digit($telefono) || strlen($telefono) !== 10)) {
         $mensaje = "El teléfono debe contener exactamente 10 números.";
         $tipo_mensaje = "error";
-    } elseif (!empty($nombre) && !empty($apellido) && !empty($email) && !empty($password) && !empty($dni) && !empty($cuil_limpio)) {
-        try {
-            $conexion->beginTransaction();
+    } elseif (empty($fecha_nacimiento)) {
+        $mensaje = "Por favor, ingresá tu fecha de nacimiento.";
+        $tipo_mensaje = "error";
+    } else {
+        // Cálculo de edad para la restricción de los 21 años
+        $hoy = new DateTime();
+        $nacimiento = new DateTime($fecha_nacimiento);
+        $edad = $hoy->diff($nacimiento)->y;
 
-            $password_hash = password_hash($password, PASSWORD_DEFAULT);
-            $id_rol_cliente = 3;
+        if ($edad < 21) {
+            $mensaje = "Acceso denegado: Debes tener al menos 21 años para registrarte.";
+            $tipo_mensaje = "error";
+        } elseif (!empty($nombre) && !empty($apellido) && !empty($email) && !empty($password) && !empty($dni) && !empty($cuil_limpio)) {
+            try {
+                $conexion->beginTransaction();
 
-            $sql_usuario = "INSERT INTO usuarios (id_rol, email, password_hash, nombre, apellido, cuil, telefono) 
-                            VALUES (:id_rol, :email, :password_hash, :nombre, :apellido, :cuil, :telefono)";
-            $stmt_u = $conexion->prepare($sql_usuario);
-            $stmt_u->execute([
-                ':id_rol'        => $id_rol_cliente,
-                ':email'         => $email,
-                ':password_hash' => $password_hash,
-                ':nombre'        => $nombre,
-                ':apellido'      => $apellido,
-                ':cuil'          => $cuil,
-                ':telefono'      => $telefono
-            ]);
+                $password_hash = password_hash($password, PASSWORD_DEFAULT);
+                $id_rol_cliente = 3;
+                $es_apto_lujo = ($edad >= 25) ? 1 : 0;
 
-            $id_usuario = $conexion->lastInsertId();
+                $sql_usuario = "INSERT INTO usuarios (id_rol, email, password_hash, nombre, apellido, cuil, telefono) 
+                                VALUES (:id_rol, :email, :password_hash, :nombre, :apellido, :cuil, :telefono)";
+                $stmt_u = $conexion->prepare($sql_usuario);
+                $stmt_u->execute([
+                    ':id_rol'         => $id_rol_cliente,
+                    ':email'          => $email,
+                    ':password_hash'  => $password_hash,
+                    ':nombre'         => $nombre,
+                    ':apellido'       => $apellido,
+                    ':cuil'           => $cuil,
+                    ':telefono'       => $telefono
+                ]);
 
-            $sql_cliente = "INSERT INTO clientes (id_cliente, dni, licencia_conducir, domicilio) 
-                            VALUES (:id_cliente, :dni, :licencia, :domicilio)";
-            $stmt_c = $conexion->prepare($sql_cliente);
-            $stmt_c->execute([
-                ':id_cliente' => $id_usuario,
-                ':dni'        => $dni,
-                ':licencia'   => $licencia,
-                ':domicilio'  => $domicilio
-            ]);
+                $id_usuario = $conexion->lastInsertId();
 
-            $conexion->commit();
+                $sql_cliente = "INSERT INTO clientes (id_cliente, dni, domicilio, fecha_nacimiento, es_apto_lujo) 
+                                VALUES (:id_cliente, :dni, :domicilio, :fecha_nacimiento, :es_apto_lujo)";
+                $stmt_c = $conexion->prepare($sql_cliente);
+                $stmt_c->execute([
+                    ':id_cliente'       => $id_usuario,
+                    ':dni'              => $dni,
+                    ':domicilio'        => $domicilio,
+                    ':fecha_nacimiento' => $fecha_nacimiento,
+                    ':es_apto_lujo'     => $es_apto_lujo
+                ]);
 
-            // Redirección limpia al login
-            header("Location: login.php");
-            exit();
+                $conexion->commit();
 
-        } catch (PDOException $e) {
-            $conexion->rollBack();
-            if ($e->getCode() == 23000) {
-                $mensaje = "El Email, DNI o CUIL ya se encuentra registrado.";
-            } else {
-                $mensaje = "Error: " . $e->getMessage();
+                header("Location: login.php");
+                exit();
+
+            } catch (PDOException $e) {
+                $conexion->rollBack();
+                if ($e->getCode() == 23000) {
+                    $mensaje = "El Email, DNI o CUIL ya se encuentra registrado.";
+                } else {
+                    $mensaje = "Error: " . $e->getMessage();
+                }
+                $tipo_mensaje = "error";
             }
+        } else {
+            $mensaje = "Por favor, completá todos los campos.";
             $tipo_mensaje = "error";
         }
-    } else {
-        $mensaje = "Por favor, completá todos los campos.";
-        $tipo_mensaje = "error";
     }
 }
 ?>
@@ -118,11 +132,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="grupo-input"><label>Nombre *</label><input type="text" name="nombre" required></div>
                 <div class="grupo-input"><label>Apellido *</label><input type="text" name="apellido" required></div>
                 <div class="grupo-input"><label>DNI *</label><input type="text" name="dni" maxlength="8" required></div>
-                <div class="grupo-input"><label>CUIL *</label><input type="text" name="cuil" maxlength="13" required></div>
+                <div class="grupo-input"><label>CUIL *</label><input type="text" name="cuil" id="cuil" maxlength="13" placeholder="XX-XXXXXXXX-X" required></div>
                 <div class="grupo-input"><label>Correo Electrónico *</label><input type="email" name="email" required></div>
                 <div class="grupo-input"><label>Contraseña *</label><input type="password" name="password" required></div>
                 <div class="grupo-input"><label>Teléfono *</label><input type="text" name="telefono" maxlength="10" required></div>
-                <div class="grupo-input"><label>Licencia de Conducir *</label><input type="text" name="licencia_conducir" required></div>
+                <div class="grupo-input"><label>Fecha de Nacimiento *</label><input type="date" name="fecha_nacimiento" required></div>
                 <div class="grupo-input full-width"><label>Domicilio *</label><input type="text" name="domicilio" required></div>
             </div>
             <button type="submit" class="btn-submit">Crear Cuenta</button>
@@ -132,5 +146,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 </div>
+
+<script>
+    // Script para autoformatear el CUIL con guiones
+    const inputCuil = document.getElementById('cuil');
+    if (inputCuil) {
+        inputCuil.addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 11) {
+                value = value.slice(0, 11);
+            }
+            if (value.length > 2 && value.length <= 10) {
+                value = value.slice(0, 2) + '-' + value.slice(2);
+            } else if (value.length > 10) {
+                value = value.slice(0, 2) + '-' + value.slice(2, 10) + '-' + value.slice(10);
+            }
+            e.target.value = value;
+        });
+    }
+</script>
 </body>
 </html>
