@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Los Pipiautos</title>
+    <link rel="stylesheet" href="style-index.css">
+</head>
+<body style="margin-top: 0;">
+
+    <!-- Barra de Navegación -->
+    <header class="main-header" style="margin-bottom: 0;">
+        <div class="logo"> Los Pipiautos</div>
+        <div class="user-info">
+            <span id="saludoUsuario" style="color: #cbd5e1; font-size: 14px;">Hola, Invitado</span>
+            <button id="btnLogout" class="btn-logout" style="display: none; background: rgba(239, 68, 68, 0.2); color: #f87171; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px;">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <!-- FRANJA SUPERIOR CON EL DEGRADÉ PEGADO AL MENÚ -->
+    <div class="seccion-degrade-superior">
+        <div class="container" style="margin: 0 auto; padding: 0;">
+
+            <!-- BANNER PRINCIPAL CON FONDO OSCURO -->
+            <section class="banner-bienvenida-oscuro">
+                <div class="banner-bienvenida-text">
+                    <h1>Bienvenido a Los Pipiautos</h1>
+                    <p>Tu solución de confianza en alquiler de vehículos y alta gama en Buenos Aires. Explorá nuestra flota clasificada por marcas, conocé nuestras políticas y encontrá tu sucursal más cercana.</p>
+                </div>
+                <div style="margin-top: 20px;">
+                    <img src="fotos_decoracion/decoracion_11.jpg" alt="Bienvenida Los Pipiautos" onerror="this.style.display='none'" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.4);">
+                </div>
+            </section>
+
+            <!-- TARJETA: MOVILIDAD Y CONFORT EN BUENOS AIRES -->
+            <section class="section-block" style="max-width: 1000px; margin: 0 auto 30px auto; background: transparent; border: none; box-shadow: none;">
+                <div class="grid-info" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                    <div class="info-text">
+                        <span class="badge" style="background: #e0f2fe; color: #0284c7; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; text-transform: uppercase;">Flota & Estilo</span>
+                        <h3 style="font-size: 24px; color: #0f172a; margin: 12px 0;">Movilidad y Confort en Buenos Aires</h3>
+                        <p style="color: #64748b; font-size: 15px; line-height: 1.6;">Elegí tu vehículo ideal clasificado por marca o descubrí nuestra sección exclusiva de alta gama.</p>
+                    </div>
+                    <div>
+                        <img src="fotos_decoracion/decoracion_1.jpg" alt="Movilidad y Confort Los Pipiautos" onerror="this.style.display='none'" style="border-radius: 12px; width: 100%; height: 220px; object-fit: cover;">
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: QUIÉNES SOMOS -->
+            <section class="section-block" style="max-width: 1000px; margin: 0 auto; background: transparent; border: none; box-shadow: none;">
+                <h2 style="color: #0f172a; margin-bottom: 20px;">Quiénes Somos</h2>
+                <div class="grid-info" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                    <div class="info-text">
+                        <h3 style="color: #0f172a;">Pasión por el camino y el buen servicio</h3>
+                        <p style="color: #64748b;">En <strong>Los Pipiautos</strong> nos especializamos en brindar soluciones de movilidad ágiles, seguras y con una flota moderna clasificada por marcas para que encuentres exactamente lo que buscás.</p>
+                    </div>
+                    <div>
+                        <img src="fotos_decoracion/decoracion_2.jpg" alt="Quiénes Somos Los Pipiautos" onerror="this.style.display='none'" style="border-radius: 12px;">
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div> <!-- FIN DE LA FRANJA CON DEGRADÉ SUPERIOR -->
+
+
+    <!-- FRANJA DE DEGRADÉ MEDIO (FLOTAS GENERALES) -->
+    <div class="seccion-degrade-medio">
+        <div class="container" style="margin: 0 auto; padding: 0;">
+
+            <!-- Flota General - Volkswagen -->
+            <section class="section-block">
+                <h2>Flota General - Volkswagen</h2>
+                <div class="grid-catalogo" id="catalogoVW"></div>
+            </section>
+
+            <!-- Flota General - Toyota -->
+            <section class="section-block">
+                <h2>Flota General - Toyota</h2>
+                <div class="grid-catalogo" id="catalogoToyota"></div>
+            </section>
+
+            <!-- Flota General - Ford -->
+            <section class="section-block">
+                <h2>Flota General - Ford</h2>
+                <div class="grid-catalogo" id="catalogoFord"></div>
+            </section>
+
+            <!-- Flota General - Chevrolet -->
+            <section class="section-block">
+                <h2>Flota General - Chevrolet</h2>
+                <div class="grid-catalogo" id="catalogoChevrolet"></div>
+            </section>
+
+            <!-- Flota General - Fiat -->
+            <section class="section-block">
+                <h2>Flota General - Fiat</h2>
+                <div class="grid-catalogo" id="catalogoFiat"></div>
+            </section>
+
+            <!-- Flota General - Renault -->
+            <section class="section-block">
+                <h2>Flota General - Renault</h2>
+                <div class="grid-catalogo" id="catalogoRenault"></div>
+            </section>
+
+            <!-- Flota General - Peugeot -->
+            <section class="section-block">
+                <h2>Flota General - Peugeot</h2>
+                <div class="grid-catalogo" id="catalogoPeugeot"></div>
+            </section>
+
+            <!-- Flota General - Motos -->
+            <section class="section-block">
+                <h2>Flota General - Motos</h2>
+                <div class="grid-catalogo" id="catalogoMotos"></div>
+            </section>
+
+        </div>
+    </div> <!-- FIN DE LA FRANJA DE FLOTAS -->
+
+
+    <!-- CONTENEDOR GENERAL PARA POLÍTICAS, LUJO Y SUCURSALES -->
+    <div class="container">
+
+        <!-- Sección Políticas de la Empresa (Única y con fondo limpio fuera de lo oscuro) -->
+        <section class="section-block" style="margin-top: 40px;">
+            <h2>Políticas de la Empresa</h2>
+            <div class="grid-info invertido" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                <div class="info-text">
+                    <h3 style="color: #0f172a;">Transparencia, Seguridad y Compromiso</h3>
+                    <p style="color: #64748b;">Todas nuestras unidades cuentan con cobertura de seguro contra todo riesgo, asistencia vial las 24 horas y riguroso mantenimiento preventivo.</p>
+                </div>
+                <div>
+                    <img src="fotos_decoracion/decoracion_5.jpg" alt="Políticas Los Pipiautos" onerror="this.style.display='none'" style="border-radius: 12px;">
+                </div>
+            </div>
+        </section>
+
+       <!-- SECCIÓN DE LUJO Y ALTA GAMA CON ESTÉTICA EXCLUSIVA -->
+    <div class="seccion-degrade-lujo">
+        <div class="container" style="margin: 0 auto; padding: 0;">
+            <section class="section-block" style="background: transparent; border: none; box-shadow: none;">
+                <h2>Flota de Lujo y Alta Gama</h2>
+                <div id="avisoLujo" class="alerta-bloqueo" style="display: none;">
+                    🔒 <strong>Sección Bloqueada:</strong> Exclusivo para mayores de 25 años registrados.
+                </div>
+                <div class="grid-catalogo" id="catalogoLujo"></div>
+            </section>
+        </div>
+    </div>
+
+       <!-- SECCIÓN DE SUCURSALES POR ZONAS -->
+    <section class="section-block" style="margin-top: 60px;">
+        <h2>Nuestras Sucursales (Red Federal)</h2>
+        <p style="color: #64748b; margin-bottom: 25px; font-size: 14px;">Contamos con más de 45 puntos distribuidos estratégicamente para que retires y entregues tu vehículo donde prefieras.</p>
+            <!-- ZONA CABA -->
+            <div class="grid-info" style="margin-bottom: 30px;">
+                <div class="info-text">
+                    <h3 style="color: #2563eb;">📍 CABA & Capital</h3>
+                    <p>Nuestras oficinas principales en el corazón de la ciudad. Retiro rápido y atención preferencial.</p>
+                    <ul style="list-style: none; padding: 0; margin-top: 10px; font-size: 13px; color: #475569; line-height: 1.8;">
+                        <li>✔️ Central - Microcentro (Av. Corrientes 800)</li>
+                        <li>✔️ Sucursal Caballito (Av. Rivadavia 5100)</li>
+                        <li>✔️ Sucursal Palermo (Av. Santa Fe 3400)</li>
+                        <li>✔️ Sucursal Belgrano (Av. Cabildo 2100)</li>
+                        <li>✔️ Sucursal Flores (Av. Gaona 2800)</li>
+                        <li>✔️ Sucursal Villa Crespo (Av. Corrientes 4800)</li>
+                        <li>✔️ Sucursal Almagro (Av. Medrano 600)</li>
+                        <li>✔️ Sucursal Recoleta (Av. Las Heras 2200)</li>
+                        <li>✔️ Sucursal San Telmo (Av. Paseo Colón 700)</li>
+                        <li>✔️ Sucursal Barracas (Av. Montes de Oca 1100)</li>
+                        <li>✔️ Sucursal Devoto (Av. Beiró 3800)</li>
+                        <li>✔️ Sucursal Nuñez (Av. del Libertador 6500)</li>
+                        <li>✔️ Sucursal Liniers (Av. Rivadavia 11500)</li>
+                        <li>✔️ Sucursal Boedo (Av. San Juan 3500)</li>
+                        <li>✔️ Sucursal Saavedra (Av. Balbín 4000)</li>
+                        <li>✔️ Sucursal Parque Patricios (Av. Caseros 2900)</li>
+                        <li>✔️ Sucursal Mataderos (Av. Juan B. Alberdi 6000)</li>
+                        <li>✔️ Sucursal Villa Urquiza (Av. Triunvirato 4500)</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="fotos_decoracion/decoracion_7.jpg" alt="Sucursales CABA" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <!-- ZONA NORTE -->
+            <div class="grid-info invertido" style="margin-bottom: 30px;">
+                <div class="info-text">
+                    <h3 style="color: #2563eb;">📍 GBA Zona Norte</h3>
+                    <p>Acceso directo desde Panamericana y principales avenidas del corredor norte.</p>
+                    <ul style="list-style: none; padding: 0; margin-top: 10px; font-size: 13px; color: #475569; line-height: 1.8;">
+                        <li>✔️ Vicente López (Av. Maipú 1500)</li>
+                        <li>✔️ Olivos (Av. del Libertador 2400)</li>
+                        <li>✔️ San Isidro (Av. Centenario 800)</li>
+                        <li>✔️ Martínez (Av. Santa Fe 1800)</li>
+                        <li>✔️ San Fernando (Av. Constitución 1100)</li>
+                        <li>✔️ Tigre (Av. Cazón 1200)</li>
+                        <li>✔️ Pilar (Panamericana Km 50)</li>
+                        <li>✔️ Escobar (Av. Tapia de Cruz 700)</li>
+                        <li>✔️ San Martín (Av. San Martín 1900)</li>
+                        <li>✔️ Villa Ballester (Calle Lacroze 4800)</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="fotos_decoracion/decoracion_8.jpg" alt="Sucursales Zona Norte" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <!-- ZONA OESTE -->
+            <div class="grid-info" style="margin-bottom: 30px;">
+                <div class="info-text">
+                    <h3 style="color: #2563eb;">📍 GBA Zona Oeste</h3>
+                    <p>Ubicaciones clave en el oeste del conurbano bonaerense para una conexión ágil.</p>
+                    <ul style="list-style: none; padding: 0; margin-top: 10px; font-size: 13px; color: #475569; line-height: 1.8;">
+                        <li>✔️ Morón (Av. Rivadavia 18200)</li>
+                        <li>✔️ Castelar (Av. Arias 2300)</li>
+                        <li>✔️ Ramos Mejía (Av. de Mayo 800)</li>
+                        <li>✔️ San Justo (Av. Illia 2500)</li>
+                        <li>✔️ Ituzaingó (Av. Néstor Kirchner 21500)</li>
+                        <li>✔️ Merlo (Av. del Libertador 600)</li>
+                        <li>✔️ Moreno (Av. Victorica 1100)</li>
+                        <li>✔️ Hurlingham (Av. Jauretche 1400)</li>
+                        <li>✔️ El Palomar (Av. Rosales 1200)</li>
+                        <li>✔️ Caseros (Av. San Martín 2600)</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="fotos_decoracion/decoracion_9.jpg" alt="Sucursales Zona Oeste" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <!-- ZONA SUR -->
+            <div class="grid-info invertido">
+                <div class="info-text">
+                    <h3 style="color: #2563eb;">📍 GBA Zona Sur</h3>
+                    <p>Cobertura total hacia el sur de la provincia con soporte técnico y entrega inmediata.</p>
+                    <ul style="list-style: none; padding: 0; margin-top: 10px; font-size: 13px; color: #475569; line-height: 1.8;">
+                        <li>✔️ Avellaneda (Av. Mitre 1400)</li>
+                        <li>✔️ Quilmes (Peatonal Rivadavia 300)</li>
+                        <li>✔️ Lanús (Av. Hipólito Yrigoyen 4500)</li>
+                        <li>✔️ Lomas de Zamora (Calle Boedo 300)</li>
+                        <li>✔️ Banfield (Av. Alsina 800)</li>
+                        <li>✔️ Temperley (Av. Meeks 1200)</li>
+                        <li>✔️ Adrogué (Av. Espora 700)</li>
+                        <li>✔️ Berazategui (Calle 14 nro 4500)</li>
+                        <li>✔️ Florencio Varela (Av. San Martín 2800)</li>
+                        <li>✔️ Ezeiza (Av. Fair 1100)</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="fotos_decoracion/decoracion_10.jpg" alt="Sucursales Zona Sur" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
