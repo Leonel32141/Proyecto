@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exotic Luxury - Los Pipiautos</title>
+    <link rel="stylesheet" href="transaccion-lujo.css">
+</head>
+<body class="body-lujo">
+
+    <div class="transaccion-container lujo-container">
+        <!-- Encabezado minimalista exótico sin el cartel amarillo -->
+        <div class="header-exotico">
+            <h2>Reserva Exclusiva</h2>
+            <p class="subtitulo-lujo">Unidad de alta gama seleccionada bajo estricto estándar VIP.</p>
+        </div>
+        
+        <!-- Tarjetas de vehículo e interior con efecto visual inmersivo -->
+        <div class="vehiculo-resumen">
+            <div class="imagen-box lujo-img-box">
+                <span class="tag-exotico">Exterior</span>
+                <img id="imgAuto" src="" alt="Vehículo de lujo seleccionado">
+            </div>
+            <div class="imagen-box lujo-img-box">
+                <span class="tag-exotico">Interior</span>
+                <img id="imgInterior" src="" alt="Interior del vehículo de lujo">
+            </div>
+        </div>
+
+        <div class="vehiculo-info lujo-info">
+            <h3 id="nombreAuto">Cargando unidad...</h3>
+            <p id="tipoAuto" class="tipo-auto"></p>
+            <p id="precioAuto" class="precio-auto"></p>
+        </div>
+
+        <!-- Formulario principal con inputs estilizados -->
+        <form id="formTransaccion">
+            <div class="campo-grid">
+                <div class="campo">
+                    <label for="fechaInicio">Retiro:</label>
+                    <input type="date" id="fechaInicio" class="input-calendario" required>
+                </div>
+
+                <div class="campo">
+                    <label for="fechaFin">Devolución:</label>
+                    <input type="date" id="fechaFin" class="input-calendario" required>
+                </div>
+            </div>
+
+            <!-- EXTRAS VIP -->
+            <div class="extras-box lujo-extras">
+                <h4>Adicionales Exclusivos</h4>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="extra-opcion" value="15000"> Chofer Privado Ejecutivo (+$15.000 / día)
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="extra-opcion" value="10000"> Cobertura Blindada (+$10.000 / día)
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="extra-opcion" value="8000"> Entrega en Aeropuerto (+$8.000 único)
+                </label>
+            </div>
+
+            <div class="total-box lujo-total">
+                <span>Inversión Total:</span> <span id="totalFinal">$0</span>
+            </div>
+
+            <button type="submit" id="btnAccion" class="btn-confirmar btn-lujo-action">Acceder a Pasarela de Pago</button>
+        </form>
+        
+        <div class="link-volver">
+            <a href="index.html">← Volver al catálogo</a>
+        </div>
+    </div>
+
+    <script src="reservar_lujo.js"></script>
+</body>
+</html>
