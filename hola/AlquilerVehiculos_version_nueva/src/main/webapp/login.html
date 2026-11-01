@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Los Pipiautos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="auth-card">
+    <div class="auth-header">
+        <span class="badge">Los Pipiautos</span>
+        <h1>Iniciar Sesión</h1>
+        <p>Ingresá con tu cuenta para continuar</p>
+    </div>
+
+    <div id="alertaError" class="alerta-error" style="display: none;"></div>
+    <div id="alertaExito" class="alerta-exito" style="display: none;"></div>
+
+    <form id="formLogin">
+        <div class="form-group">
+            <label>Correo Electrónico</label>
+            <input type="email" id="email" required placeholder="correo@ejemplo.com">
+        </div>
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" id="password" required placeholder="Tu contraseña">
+        </div>
+
+        <button type="submit" class="btn-auth">Ingresar</button>
+    </form>
+
+    <a href="registro.html" class="auth-link">¿No tenés cuenta? Registrarse</a>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>
