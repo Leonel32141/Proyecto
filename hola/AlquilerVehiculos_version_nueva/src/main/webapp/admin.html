@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Los Pipiautos</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">🚗 Los Pipiautos | Admin Dashboard</div>
+        <div class="user-info">
+            <span id="adminNombre">Administrador</span>
+            <button onclick="cerrarSesionAdmin()" class="btn-salir">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <main class="admin-container">
+        <!-- Métricas Rápidas -->
+        <section class="metrics-grid">
+            <div class="metric-card">
+                <h3>Total Alquileres</h3>
+                <p id="statAlquileres">0</p>
+            </div>
+            <div class="metric-card">
+                <h3>Flota Activa</h3>
+                <p id="statVehiculos">0</p>
+            </div>
+            <div class="metric-card">
+                <h3>Ingresos Estimados</h3>
+                <p id="statIngresos">$0</p>
+            </div>
+        </section>
+
+        <!-- Sección de Reservas y Contratos -->
+        <section class="admin-section">
+            <h2>Reservas y Contratos Registrados</h2>
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>N° Contrato</th>
+                            <th>Cliente (ID)</th>
+                            <th>Vehículo (ID)</th>
+                            <th>Período</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaReservasBody">
+                        <tr>
+                            <td colspan="6" style="text-align: center; color: #94a3b8;">Cargando reservas desde la base de datos...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Sección para Incorporar Nueva Unidad a la Flota -->
+        <section class="admin-section">
+            <h2>Incorporar Nueva Unidad a la Flota</h2>
+            <form id="formNuevoVehiculo" class="admin-form">
+                <div class="fila-doble">
+                    <div class="campo">
+                        <label for="nuevaPatente">Patente / Dominio:</label>
+                        <input type="text" id="nuevaPatente" placeholder="Ej: AB123CD" maxlength="8" style="text-transform: uppercase;" required>
+                    </div>
+                    <div class="campo">
+                        <label for="nuevoModelo">Modelo del Vehículo (Catálogo):</label>
+                        <select id="nuevoModelo" required>
+                            <option value="">Seleccione un modelo...</option>
+                            <option value="1">Corolla 2023</option>
+                            <option value="2">Yaris 2022</option>
+                            <option value="3">Hilux 2024</option>
+                            <option value="4">Etios 2021</option>
+                            <option value="5">Ranger 2023</option>
+                            <option value="6">Ka 2021</option>
+                            <option value="7">Focus 2020</option>
+                            <option value="8">Territory 2023</option>
+                            <option value="9">Gol Trend 2022</option>
+                            <option value="10">Polo 2023</option>
+                            <option value="11">Amarok 2024</option>
+                            <option value="12">T-Cross 2023</option>
+                            <option value="13">Taos 2024</option>
+                            <option value="14">Onix 2022</option>
+                            <option value="15">Cruze 2023</option>
+                            <option value="16">Tracker 2023</option>
+                            <option value="17">S10 2024</option>
+                            <option value="18">208 2023</option>
+                            <option value="19">2008 2022</option>
+                            <option value="20">3008 2023</option>
+                            <option value="21">Cronos 2023</option>
+                            <option value="22">Toro 2024</option>
+                            <option value="23">Mobi 2022</option>
+                            <option value="24">Sandero 2022</option>
+                            <option value="25">Duster 2023</option>
+                            <option value="26">Logan 2021</option>
+                            <option value="27">XR 150L 2023</option>
+                            <option value="28">Wave 110S 2023</option>
+                            <option value="29">CB300R 2024</option>
+                            <option value="30">YBR 125 2022</option>
+                            <option value="31">Ferrari 488 GTB 2017</option>
+                            <option value="32">Lamborghini Urus 2019</option>
+                            <option value="33">BMW M4 Competition 2018</option>
+                            <option value="34">Audi R8 V10 2016</option>
+                            <option value="35">Porsche 911 Turbo S 2018</option>
+                            <option value="36">Mercedes-AMG G 63 2019</option>
+                            <option value="37">Chevrolet Corvette C8 2020</option>
+                            <option value="38">Aston Martin Vantage 2017</option>
+                            <option value="39">Maserati Levante Trofeo 2018</option>
+                            <option value="40">Bentley Continental GT 2016</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="fila-doble">
+                    <div class="campo">
+                        <label for="infoCategoriaVisual">Categoría Asignada:</label>
+                        <input type="text" id="infoCategoriaVisual" value="Se selecciona automáticamente..." readonly style="background: #0f172a; color: #38bdf8; font-weight: 600; cursor: not-allowed;">
+                    </div>
+                    <div class="campo">
+                        <label for="nuevaSucursal">Sucursal Actual (ID):</label>
+                        <input type="number" id="nuevaSucursal" value="1" min="1" max="48" required>
+                        <small style="color: #94a3b8; font-size: 0.75rem;">Ingrese el ID de la sucursal (1 al 48)</small>
+                    </div>
+                </div>
+
+                <div class="fila-doble">
+                    <div class="campo">
+                        <label for="nuevoVencSeguro">Vencimiento Seguro:</label>
+                        <div class="date-picker-wrapper" onclick="document.getElementById('nuevoVencSeguro').showPicker()">
+                            <input type="text" id="displayVencSeguro" placeholder="dd/mm/aaaa" readonly>
+                            <input type="date" id="nuevoVencSeguro" class="hidden-date-input" required>
+                            <span class="calendar-icon">📅</span>
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="nuevoVencPatente">Vencimiento Patente:</label>
+                        <div class="date-picker-wrapper" onclick="document.getElementById('nuevoVencPatente').showPicker()">
+                            <input type="text" id="displayVencPatente" placeholder="dd/mm/aaaa" readonly>
+                            <input type="date" id="nuevoVencPatente" class="hidden-date-input" required>
+                            <span class="calendar-icon">📅</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-accion-admin">Registrar Vehículo en la Flota</button>
+            </form>
+        </section>
+
+        <!-- Monitoreo de Flota Estilo Catálogo -->
+        <section class="admin-section">
+            <h2>Catálogo y Monitoreo de Unidades por Sucursal</h2>
+            <div id="gridMonitoreoFlota" class="catalog-grid">
+                <p style="color: #94a3b8;">Cargando unidades de la flota...</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

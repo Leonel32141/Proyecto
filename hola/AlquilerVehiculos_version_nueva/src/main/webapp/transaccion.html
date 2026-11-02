@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Alquiler y Pago - Alquiler de Vehículos</title>
+    <link rel="stylesheet" href="transaccion.css">
+</head>
+<body>
+    <div class="transaccion-container">
+        <h2>Confirmar tu Alquiler</h2>
+        
+        <!-- Tarjetas de vehículo e interior -->
+        <div class="vehiculo-resumen" id="contenedorResumen">
+            <div class="imagen-box" id="cajaVehiculo">
+                <h4>Vehículo</h4>
+                <img id="imgAuto" src="" alt="Vehículo seleccionado" style="width: 100%; height: 200px; object-fit: contain;">
+            </div>
+            <!-- Contenedor de interior (se ocultará si es moto) -->
+            <div class="imagen-box" id="cajaInterior">
+                <h4>Interior</h4>
+                <img id="imgInterior" src="" alt="Interior del vehículo" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+        </div>
+
+        <div class="vehiculo-info">
+            <h3 id="nombreAuto">Cargando vehículo...</h3>
+            <p id="tipoAuto" class="tipo-auto"></p>
+            <p id="precioAuto" class="precio-auto"></p>
+        </div>
+
+        <!-- Formulario principal -->
+        <form id="formTransaccion">
+            <div class="campo">
+                <label for="fechaInicio">Fecha de Retiro:</label>
+                <input type="date" id="fechaInicio" class="input-calendario" onkeydown="return false;" onpaste="return false;" required>
+            </div>
+
+            <div class="campo">
+                <label for="fechaFin">Fecha de Devolución:</label>
+                <input type="date" id="fechaFin" class="input-calendario" onkeydown="return false;" onpaste="return false;" required>
+            </div>
+
+            <!-- SECCIÓN DE EXTRAS (Se ocultará automáticamente mediante JS si es una moto) -->
+            <div class="extras-box" id="cajaExtras">
+                <h4>Servicios Adicionales (Extras)</h4>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="extra-opcion" value="5000"> Silla de Bebé / Infantil (+$5.000 / día)
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="extra-opcion" value="3000"> GPS Satelital (+$3.000 / día)
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="extra-opcion" value="10000"> Seguro Contra Todo Riesgo (+$10.000 / día)
+                </label>
+            </div>
+
+            <div class="total-box">
+                <h3>Total Estimado: <span id="totalFinal">$0</span></h3>
+            </div>
+
+            <button type="submit" id="btnAccion" class="btn-confirmar">Continuar al Pago</button>
+        </form>
+        
+        <div class="link-volver">
+            <a href="index.html">← Volver al catálogo</a>
+        </div>
+    </div>
+
+    <script src="transaccion.js"></script>
+</body>
+</html>

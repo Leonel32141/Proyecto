@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Reservas - Los Pipiautos</title>
+    <!-- CSS independiente para la vista -->
+    <link rel="stylesheet" href="mis-reservas.css">
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <header class="main-header">
+        <div class="logo">Los Pipiautos</div>
+        <nav class="navbar-links" style="display: flex; gap: 15px; align-items: center;">
+            <a href="index.html" style="color: #cbd5e1; text-decoration: none; font-size: 14px;">Inicio</a>
+            <a href="mis-reservas.html" style="color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: bold;">Mis Reservas</a>
+        </nav>
+        <div class="user-info">
+            <span id="saludoUsuario" style="color: #cbd5e1; font-size: 14px;">Hola, Invitado</span>
+            <button id="btnLogout" class="btn-logout" style="display: none; background: rgba(239, 68, 68, 0.2); color: #f87171; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px;">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <!-- Contenido Principal: Historial de Reservas -->
+    <div class="container" style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
+        <h2 style="color: #0f172a; margin-bottom: 20px;">Historial de Mis Reservas</h2>
+        
+        <div class="card-reservas" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+            <div class="table-responsive">
+                <table class="tabla-reservas" style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #e2e8f0; color: #475569; font-size: 13px; text-transform: uppercase;">
+                            <th style="padding: 12px;">ID Reserva</th>
+                            <th style="padding: 12px;">Vehículo</th>
+                            <th style="padding: 12px;">Inicio Pautado</th>
+                            <th style="padding: 12px;">Fin Pautado</th>
+                            <th style="padding: 12px;">Estado</th>
+                            <th style="padding: 12px;">Total</th>
+                            <th style="padding: 12px;">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaMisReservasBody">
+                        <!-- Los datos se inyectarán dinámicamente mediante JS -->
+                        <tr>
+                            <td colspan="7" style="text-align: center; padding: 20px; color: #64748b;">Cargando reservas...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="mt-4" style="margin-top: 20px;">
+            <a href="index.html" class="btn-volver" style="background: #64748b; color: #ffffff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; display: inline-block;">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <!-- JS independiente para la vista -->
+    <script src="mis-reservas.js"></script>
+</body>
+</html>

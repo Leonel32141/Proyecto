@@ -1,0 +1,261 @@
+/* --- ESTÉTICA EXÓTICA Y MINIMALISTA LUJO --- */
+body.body-lujo {
+    background: radial-gradient(circle at center, #11141d 0%, #07090e 100%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #f3f4f6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor principal achicado y refinado */
+.lujo-container {
+    background: rgba(15, 20, 30, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 16px;
+    padding: 24px 28px;
+    width: 100%;
+    max-width: 580px; /* Más compacto y contenido */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.05);
+}
+
+.header-exotico {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-exotico h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #ffffff 0%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 5px 0;
+}
+
+.subtitulo-lujo {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    margin: 0;
+}
+
+/* Galería de imágenes compacta y estilizada */
+.vehiculo-resumen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.lujo-img-box {
+    background: #090d13;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.lujo-img-box:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
+}
+
+.tag-exotico {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    color: #d4af37;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    z-index: 2;
+}
+
+.lujo-img-box img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.lujo-img-box:hover img {
+    opacity: 1;
+}
+
+/* Info del vehículo */
+.lujo-info {
+    text-align: center;
+    background: rgba(212, 175, 55, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.lujo-info h3 {
+    font-size: 1.15rem;
+    color: #f9fafb;
+    margin: 0 0 4px 0;
+}
+
+.tipo-auto {
+    font-size: 0.75rem;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 6px 0;
+}
+
+.precio-auto {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #34d399;
+    margin: 0;
+}
+
+/* Campos de formulario en grilla compacta */
+.campo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.campo {
+    margin-bottom: 12px;
+}
+
+.campo label {
+    display: block;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-calendario, .campo input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    background: #090d13;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.input-calendario:focus, .campo input[type="text"]:focus {
+    border-color: #d4af37;
+    outline: none;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.25);
+}
+
+/* Extras compactos */
+.lujo-extras {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+}
+
+.lujo-extras h4 {
+    font-size: 0.8rem;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 8px 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #d1d5db;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    margin-right: 8px;
+    accent-color: #d4af37;
+}
+
+/* Caja Total exótica */
+.lujo-total {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.lujo-total span {
+    font-size: 0.9rem;
+    color: #d1d5db;
+}
+
+.lujo-total span#totalFinal {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #34d399;
+}
+
+/* Botón principal futurista */
+.btn-lujo-action {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-lujo-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    background: linear-gradient(135deg, #e5be40, #bd8814);
+}
+
+/* Link volver */
+.link-volver {
+    text-align: center;
+    margin-top: 14px;
+}
+
+.link-volver a {
+    color: #9ca3af;
+    font-size: 0.75rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.link-volver a:hover {
+    color: #d4af37;
+}
