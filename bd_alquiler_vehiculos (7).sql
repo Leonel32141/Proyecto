@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2026 a las 21:03:27
+-- Tiempo de generación: 08-11-2026 a las 07:23:45
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -26,11 +26,12 @@ DELIMITER $$
 -- Procedimientos
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_alquiler_extra_por_id` (IN `p_id_alquiler` INT, IN `p_id_extra` INT)   BEGIN
-    SELECT * FROM alquileres_extras WHERE id_alquiler = p_id_alquiler AND id_extra = p_id_extra;
+    SELECT * FROM alquileres_extras 
+    WHERE id_alquiler = p_id_alquiler AND id_extra = p_id_extra;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_alquiler_por_id` (IN `p_id_alquiler` INT)   BEGIN
-    SELECT * FROM alquileres WHERE id_alquiler = p_id_alquiler;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_alquiler_por_id` (IN `p_id` INT)   BEGIN
+    SELECT * FROM alquileres WHERE id_alquiler = p_id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_categoria_por_id` (IN `p_id_categoria` INT)   BEGIN
@@ -41,64 +42,69 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_checkin_checkout_por_id` 
     SELECT * FROM checkins_checkouts WHERE id_registro = p_id_registro;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_cliente_por_id` (IN `p_id_cliente` INT)   BEGIN
-    SELECT * FROM clientes WHERE id_cliente = p_id_cliente;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_cliente_por_id` (IN `p_id` INT)   BEGIN
+    SELECT * FROM clientes WHERE id_cliente = p_id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_foto_inspeccion_por_id` (IN `p_id_foto` INT)   BEGIN
     SELECT * FROM fotos_inspecciones WHERE id_foto = p_id_foto;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_mantenimiento_por_id` (IN `p_id_mantenimiento` INT)   BEGIN
-    SELECT * FROM mantenimientos WHERE id_mantenimiento = p_id_mantenimiento;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_mantenimiento_por_id` (IN `p_id` INT)   BEGIN
+    SELECT * FROM mantenimientos WHERE id_mantenimiento = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_marca_por_id` (IN `p_id_marca` INT)   BEGIN
-    SELECT * FROM marcas WHERE id_marca = p_id_marca;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_marca_por_id` (IN `p_id` INT)   BEGIN
+    SELECT * FROM marcas WHERE id_marca = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_metodo_pago_por_id` (IN `p_id_metodo_pago` INT)   BEGIN
-    SELECT * FROM metodos_pagos WHERE id_metodo_pago = p_id_metodo_pago;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_metodo_pago_por_id` (IN `p_id` INT)   BEGIN
+    SELECT * FROM metodos_pagos WHERE id_metodo_pago = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_modelo_por_id` (IN `p_id_modelo` INT)   BEGIN
-    SELECT * FROM modelos WHERE id_modelo = p_id_modelo;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_modelo_por_id` (IN `p_id` INT)   BEGIN
+    SELECT * FROM modelos WHERE id_modelo = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_opcional_extra_por_id` (IN `p_id_extra` INT)   BEGIN
-    SELECT * FROM opcionales_extras WHERE id_extra = p_id_extra;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_opcional_extra_por_id` (IN `p_id` INT)   BEGIN
+    SELECT * FROM opcionales_extras WHERE id_extra = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_pago_por_id` (IN `p_id_pago` INT)   BEGIN
-    SELECT * FROM pagos WHERE id_pago = p_id_pago;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_pago_por_id` (IN `p_id` INT)   BEGIN
+    SELECT * FROM pagos WHERE id_pago = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_rol_por_id` (IN `p_id_rol` INT)   BEGIN
-    SELECT * FROM roles WHERE id_rol = p_id_rol;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_rol_por_id` (IN `p_id` INT)   BEGIN
+    SELECT * FROM roles WHERE id_rol = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_sucursal_por_id` (IN `p_id_sucursal` INT)   BEGIN
-    SELECT * FROM sucursales WHERE id_sucursal = p_id_sucursal;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_sucursal_por_id` (IN `p_id` INT)   BEGIN
+    SELECT * FROM sucursales WHERE id_sucursal = p_id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_traslado_por_id` (IN `p_id_traslado` INT)   BEGIN
     SELECT * FROM traslados_vehiculos WHERE id_traslado = p_id_traslado;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_traslado_vehiculo_por_id` (IN `p_id` INT)   BEGIN
+    SELECT * FROM traslados_vehiculos WHERE id_traslado = p_id;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_usuario_por_id` (IN `p_id_usuario` INT)   BEGIN
     SELECT * FROM usuarios WHERE id_usuario = p_id_usuario;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_vehiculo_por_id` (IN `p_id_vehiculo` INT)   BEGIN
-    SELECT * FROM vehiculos WHERE id_vehiculo = p_id_vehiculo;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_buscar_vehiculo_por_id` (IN `p_id` INT)   BEGIN
+    SELECT * FROM vehiculos WHERE id_vehiculo = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_alquiler` (IN `p_id_alquiler` INT)   BEGIN
-    DELETE FROM alquileres WHERE id_alquiler = p_id_alquiler;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_alquiler` (IN `p_id` INT)   BEGIN
+    DELETE FROM alquileres WHERE id_alquiler = p_id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_alquiler_extra` (IN `p_id_alquiler` INT, IN `p_id_extra` INT)   BEGIN
-    DELETE FROM alquileres_extras WHERE id_alquiler = p_id_alquiler AND id_extra = p_id_extra;
+    DELETE FROM alquileres_extras 
+    WHERE id_alquiler = p_id_alquiler AND id_extra = p_id_extra;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_categoria` (IN `p_id_categoria` INT)   BEGIN
@@ -109,78 +115,75 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_checkin_checkout` (IN `
     DELETE FROM checkins_checkouts WHERE id_registro = p_id_registro;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_cliente` (IN `p_id_cliente` INT)   BEGIN
-    DELETE FROM clientes WHERE id_cliente = p_id_cliente;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_cliente` (IN `p_id` INT)   BEGIN
+    DELETE FROM clientes WHERE id_cliente = p_id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_foto_inspeccion` (IN `p_id_foto` INT)   BEGIN
     DELETE FROM fotos_inspecciones WHERE id_foto = p_id_foto;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_mantenimiento` (IN `p_id_mantenimiento` INT)   BEGIN
-    DELETE FROM mantenimientos WHERE id_mantenimiento = p_id_mantenimiento;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_mantenimiento` (IN `p_id` INT)   BEGIN
+    DELETE FROM mantenimientos WHERE id_mantenimiento = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_marca` (IN `p_id_marca` INT)   BEGIN
-    DELETE FROM marcas WHERE id_marca = p_id_marca;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_marca` (IN `p_id` INT)   BEGIN
+    DELETE FROM marcas WHERE id_marca = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_metodo_pago` (IN `p_id_metodo_pago` INT)   BEGIN
-    DELETE FROM metodos_pagos WHERE id_metodo_pago = p_id_metodo_pago;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_metodo_pago` (IN `p_id` INT)   BEGIN
+    DELETE FROM metodos_pagos WHERE id_metodo_pago = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_modelo` (IN `p_id_modelo` INT)   BEGIN
-    DELETE FROM modelos WHERE id_modelo = p_id_modelo;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_modelo` (IN `p_id` INT)   BEGIN
+    DELETE FROM modelos WHERE id_modelo = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_opcional_extra` (IN `p_id_extra` INT)   BEGIN
-    DELETE FROM opcionales_extras WHERE id_extra = p_id_extra;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_opcional_extra` (IN `p_id` INT)   BEGIN
+    DELETE FROM opcionales_extras WHERE id_extra = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_pago` (IN `p_id_pago` INT)   BEGIN
-    DELETE FROM pagos WHERE id_pago = p_id_pago;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_pago` (IN `p_id` INT)   BEGIN
+    DELETE FROM pagos WHERE id_pago = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_rol` (IN `p_id_rol` INT)   BEGIN
-    DELETE FROM roles WHERE id_rol = p_id_rol;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_rol` (IN `p_id` INT)   BEGIN
+    DELETE FROM roles WHERE id_rol = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_sucursal` (IN `p_id_sucursal` INT)   BEGIN
-    DELETE FROM sucursales WHERE id_sucursal = p_id_sucursal;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_sucursal` (IN `p_id` INT)   BEGIN
+    DELETE FROM sucursales WHERE id_sucursal = p_id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_traslado` (IN `p_id_traslado` INT)   BEGIN
     DELETE FROM traslados_vehiculos WHERE id_traslado = p_id_traslado;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_traslado_vehiculo` (IN `p_id` INT)   BEGIN
+    DELETE FROM traslados_vehiculos WHERE id_traslado = p_id;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_usuario` (IN `p_id_usuario` INT)   BEGIN
     DELETE FROM usuarios WHERE id_usuario = p_id_usuario;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_vehiculo` (IN `p_id_vehiculo` INT)   BEGIN
-    DELETE FROM vehiculos WHERE id_vehiculo = p_id_vehiculo;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_vehiculo` (IN `p_id` INT)   BEGIN
+    DELETE FROM vehiculos WHERE id_vehiculo = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_alquiler` (IN `p_id_cliente` INT, IN `p_id_vehiculo` INT, IN `p_id_sucursal_retiro` INT, IN `p_id_sucursal_devolucion` INT, IN `p_fecha_reserva` DATETIME, IN `p_fecha_inicio_pautada` DATETIME, IN `p_fecha_fin_pautada` DATETIME, IN `p_es_oneway` BOOLEAN, IN `p_monto_total` DECIMAL(10,2), IN `p_monto_sena` DECIMAL(10,2), IN `p_estado_reserva` VARCHAR(50))   BEGIN
-    INSERT INTO alquileres (
-        id_cliente, id_vehiculo, id_sucursal_retiro, id_sucursal_devolucion,
-        fecha_reserva, fecha_inicio_pautada, fecha_fin_pautada, es_oneway,
-        monto_total, monto_sena, estado_reserva
-    ) VALUES (
-        p_id_cliente, p_id_vehiculo, p_id_sucursal_retiro, p_id_sucursal_devolucion,
-        p_fecha_reserva, p_fecha_inicio_pautada, p_fecha_fin_pautada, p_es_oneway,
-        p_monto_total, p_monto_sena, p_estado_reserva
-    );
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_alquiler` (IN `p_id_cliente` INT, IN `p_id_vehiculo` INT, IN `p_id_sucursal_retiro` INT, IN `p_id_sucursal_devolucion` INT, IN `p_fecha_reserva` DATETIME, IN `p_fecha_inicio_pautada` DATETIME, IN `p_fecha_fin_pautada` DATETIME, IN `p_es_oneway` BOOLEAN, IN `p_monto_total` DECIMAL(10,2), IN `p_monto_sena` DECIMAL(10,2), IN `p_estado_reserva` VARCHAR(30))   BEGIN
+    INSERT INTO alquileres (id_cliente, id_vehiculo, id_sucursal_retiro, id_sucursal_devolucion, fecha_reserva, fecha_inicio_pautada, fecha_fin_pautada, es_oneway, monto_total, monto_sena, estado_reserva) 
+    VALUES (p_id_cliente, p_id_vehiculo, p_id_sucursal_retiro, p_id_sucursal_devolucion, p_fecha_reserva, p_fecha_inicio_pautada, p_fecha_fin_pautada, p_es_oneway, p_monto_total, p_monto_sena, p_estado_reserva);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_alquiler_extra` (IN `p_id_alquiler` INT, IN `p_id_extra` INT, IN `p_cantidad` INT)   BEGIN
-    INSERT INTO alquileres_extras (id_alquiler, id_extra, cantidad)
+    INSERT INTO alquileres_extras (id_alquiler, id_extra, cantidad) 
     VALUES (p_id_alquiler, p_id_extra, p_cantidad);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_categoria` (IN `p_nombre_categoria` VARCHAR(50), IN `p_descripcion` TEXT, IN `p_tarifa_base_diaria` DECIMAL(10,2))   BEGIN
-    INSERT INTO categorias_vehiculos (nombre_categoria, descripcion, tarifa_base_diaria)
-    VALUES (p_nombre_categoria, p_descripcion, p_tarifa_base_diaria);
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_categoria` (IN `p_nombre_categoria` VARCHAR(50), IN `p_descripcion` TEXT, IN `p_tarifa_base_dia` DECIMAL(10,2))   BEGIN
+    INSERT INTO categorias_vehiculos (nombre_categoria, descripcion, tarifa_base_dia) 
+    VALUES (p_nombre_categoria, p_descripcion, p_tarifa_base_dia);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_checkin_checkout` (IN `p_id_alquiler` INT, IN `p_id_usuario_empleado` INT, IN `p_tipo` VARCHAR(20), IN `p_fecha_hora_real` DATETIME, IN `p_kilometraje` INT, IN `p_nivel_combustible` VARCHAR(20), IN `p_observaciones` TEXT)   BEGIN
@@ -188,53 +191,53 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_checkin_checkout` (IN `
     VALUES (p_id_alquiler, p_id_usuario_empleado, p_tipo, p_fecha_hora_real, p_kilometraje, p_nivel_combustible, p_observaciones);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_cliente` (IN `p_id_cliente` INT, IN `p_dni` VARCHAR(20), IN `p_licencia` VARCHAR(50), IN `p_domicilio` VARCHAR(200), IN `p_foto` VARCHAR(255), IN `p_fecha` DATE, IN `p_apto` TINYINT)   BEGIN
-    INSERT INTO clientes (id_cliente, dni, licencia_conducir, domicilio, foto_identificacion_url, fecha_nacimiento, es_apto_lujo)
-    VALUES (p_id_cliente, p_dni, p_licencia, p_domicilio, p_foto, p_fecha, p_apto);
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_cliente` (IN `p_id_cliente` INT, IN `p_dni` VARCHAR(20), IN `p_licencia_conducir` VARCHAR(50), IN `p_domicilio` VARCHAR(150), IN `p_foto_identificacion_url` VARCHAR(255), IN `p_fecha_nacimiento` DATE, IN `p_es_apto_lujo` BOOLEAN)   BEGIN
+    INSERT INTO clientes (id_cliente, dni, licencia_conducir, domicilio, foto_identificacion_url, fecha_nacimiento, es_apto_lujo) 
+    VALUES (p_id_cliente, p_dni, p_licencia_conducir, p_domicilio, p_foto_identificacion_url, p_fecha_nacimiento, p_es_apto_lujo);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_foto_inspeccion` (IN `p_id_registro` INT, IN `p_foto_url` VARCHAR(255), IN `p_observacion_dano` TEXT)   BEGIN
-    INSERT INTO fotos_inspecciones (id_registro, foto_url, observacion_dano)
+    INSERT INTO fotos_inspecciones (id_registro, foto_url, observacion_dano) 
     VALUES (p_id_registro, p_foto_url, p_observacion_dano);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_mantenimiento` (IN `p_id_vehiculo` INT, IN `p_tipo_mantenimiento` VARCHAR(50), IN `p_fecha_ingreso` DATE, IN `p_fecha_egreso_estimada` DATE, IN `p_costo_total` DECIMAL(10,2), IN `p_taller_mecanico` VARCHAR(100), IN `p_detalle_trabajo` TEXT)   BEGIN
-    INSERT INTO mantenimientos (id_vehiculo, tipo_mantenimiento, fecha_ingreso, fecha_egreso_estimada, costo_total, taller_mecanico, detalle_trabajo)
+    INSERT INTO mantenimientos (id_vehiculo, tipo_mantenimiento, fecha_ingreso, fecha_egreso_estimada, costo_total, taller_mecanico, detalle_trabajo) 
     VALUES (p_id_vehiculo, p_tipo_mantenimiento, p_fecha_ingreso, p_fecha_egreso_estimada, p_costo_total, p_taller_mecanico, p_detalle_trabajo);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_marca` (IN `p_nombre_marca` VARCHAR(50))   BEGIN
-    INSERT INTO marcas (nombre_marca)
+    INSERT INTO marcas (nombre_marca) 
     VALUES (p_nombre_marca);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_metodo_pago` (IN `p_nombre_metodo` VARCHAR(50), IN `p_requiere_comprobante` TINYINT)   BEGIN
-    INSERT INTO metodos_pagos (nombre_metodo, requiere_comprobante)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_metodo_pago` (IN `p_nombre_metodo` VARCHAR(50), IN `p_requiere_comprobante` BOOLEAN)   BEGIN
+    INSERT INTO metodos_pagos (nombre_metodo, requiere_comprobante) 
     VALUES (p_nombre_metodo, p_requiere_comprobante);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_modelo` (IN `p_id_marca` INT, IN `p_nombre_modelo` VARCHAR(50), IN `p_anio` INT, IN `p_imagen` VARCHAR(100))   BEGIN
-    INSERT INTO modelos (id_marca, nombre_modelo, anio, imagen)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_modelo` (IN `p_id_marca` INT, IN `p_nombre_modelo` VARCHAR(50), IN `p_anio` INT, IN `p_imagen` VARCHAR(255))   BEGIN
+    INSERT INTO modelos (id_marca, nombre_modelo, anio, imagen) 
     VALUES (p_id_marca, p_nombre_modelo, p_anio, p_imagen);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_opcional_extra` (IN `p_nombre_extra` VARCHAR(50), IN `p_descripcion` TEXT, IN `p_precio_diario` DECIMAL(8,2))   BEGIN
-    INSERT INTO opcionales_extras (nombre_extra, descripcion, precio_diario)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_opcional_extra` (IN `p_nombre_extra` VARCHAR(50), IN `p_descripcion` TEXT, IN `p_precio_diario` DECIMAL(10,2))   BEGIN
+    INSERT INTO opcionales_extras (nombre_extra, descripcion, precio_diario) 
     VALUES (p_nombre_extra, p_descripcion, p_precio_diario);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_pago` (IN `p_id_alquiler` INT, IN `p_id_metodo_pago` INT, IN `p_monto` DECIMAL(12,2), IN `p_fecha_pago` DATETIME, IN `p_estado_pago` VARCHAR(20), IN `p_numero_comprobante` VARCHAR(100))   BEGIN
-    INSERT INTO pagos (id_alquiler, id_metodo_pago, monto, fecha_pago, estado_pago, numero_comprobante)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_pago` (IN `p_id_alquiler` INT, IN `p_id_metodo_pago` INT, IN `p_monto` DECIMAL(10,2), IN `p_fecha_pago` DATETIME, IN `p_estado_pago` VARCHAR(30), IN `p_numero_comprobante` VARCHAR(50))   BEGIN
+    INSERT INTO pagos (id_alquiler, id_metodo_pago, monto, fecha_pago, estado_pago, numero_comprobante) 
     VALUES (p_id_alquiler, p_id_metodo_pago, p_monto, p_fecha_pago, p_estado_pago, p_numero_comprobante);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_rol` (IN `p_nombre_rol` VARCHAR(50), IN `p_descripcion` TEXT)   BEGIN
-    INSERT INTO roles (nombre_rol, descripcion)
+    INSERT INTO roles (nombre_rol, descripcion) 
     VALUES (p_nombre_rol, p_descripcion);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_sucursal` (IN `p_nombre` VARCHAR(100), IN `p_direccion` VARCHAR(200), IN `p_ciudad` VARCHAR(100), IN `p_activa` TINYINT)   BEGIN
-    INSERT INTO sucursales (nombre, direccion, ciudad, activa)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_sucursal` (IN `p_nombre` VARCHAR(100), IN `p_direccion` VARCHAR(150), IN `p_ciudad` VARCHAR(50), IN `p_activa` BOOLEAN)   BEGIN
+    INSERT INTO sucursales (nombre, direccion, ciudad, activa) 
     VALUES (p_nombre, p_direccion, p_ciudad, p_activa);
 END$$
 
@@ -243,31 +246,23 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_traslado` (IN `p_id_veh
     VALUES (p_id_vehiculo, p_id_sucursal_origen, p_id_sucursal_destino, p_id_usuario_chofer, p_fecha_salida, p_fecha_llegada, p_observaciones);
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_traslado_vehiculo` (IN `p_id_vehiculo` INT, IN `p_id_sucursal_origen` INT, IN `p_id_sucursal_destino` INT, IN `p_id_usuario_chofer` INT, IN `p_fecha_salida` DATETIME, IN `p_fecha_llegada` DATETIME, IN `p_observaciones` TEXT)   BEGIN
+    INSERT INTO traslados_vehiculos (id_vehiculo, id_sucursal_origen, id_sucursal_destino, id_usuario_chofer, fecha_salida, fecha_llegada, observaciones) 
+    VALUES (p_id_vehiculo, p_id_sucursal_origen, p_id_sucursal_destino, p_id_usuario_chofer, p_fecha_salida, p_fecha_llegada, p_observaciones);
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_usuario` (IN `p_id_rol` INT, IN `p_email` VARCHAR(150), IN `p_password_hash` VARCHAR(255), IN `p_nombre` VARCHAR(100), IN `p_apellido` VARCHAR(100), IN `p_dni` VARCHAR(8), IN `p_cuil` VARCHAR(20), IN `p_telefono` VARCHAR(30), IN `p_intentos_fallidos` INT, IN `p_cuenta_bloqueada` TINYINT, IN `p_fecha_creacion` DATETIME, IN `p_fecha_nacimiento` DATE)   BEGIN
     INSERT INTO usuarios (id_rol, email, password_hash, nombre, apellido, dni, cuil, telefono, intentos_fallidos, cuenta_bloqueada, fecha_creacion, fecha_nacimiento)
     VALUES (p_id_rol, p_email, p_password_hash, p_nombre, p_apellido, p_dni, p_cuil, p_telefono, p_intentos_fallidos, p_cuenta_bloqueada, p_fecha_creacion, p_fecha_nacimiento);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_vehiculo` (IN `p_patente` VARCHAR(15), IN `p_id_modelo` INT, IN `p_id_categoria` INT, IN `p_id_sucursal_actual` INT, IN `p_kilometraje_actual` INT, IN `p_estado` VARCHAR(50), IN `p_vencimiento_seguro` DATE, IN `p_vencimiento_patente` DATE)   BEGIN
-    INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_vehiculo` (IN `p_patente` VARCHAR(20), IN `p_id_modelo` INT, IN `p_id_categoria` INT, IN `p_id_sucursal_actual` INT, IN `p_kilometraje_actual` INT, IN `p_estado` VARCHAR(30), IN `p_vencimiento_seguro` DATE, IN `p_vencimiento_patente` DATE)   BEGIN
+    INSERT INTO vehiculos (patente, id_modelo, id_categoria, id_sucursal_actual, kilometraje_actual, estado, vencimiento_seguro, vencimiento_patente) 
     VALUES (p_patente, p_id_modelo, p_id_categoria, p_id_sucursal_actual, p_kilometraje_actual, p_estado, p_vencimiento_seguro, p_vencimiento_patente);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_listar_alquileres` ()   BEGIN
-    SELECT 
-        id_alquiler, 
-        id_cliente, 
-        id_vehiculo, 
-        id_sucursal_retiro, 
-        id_sucursal_devolucion, 
-        fecha_reserva, 
-        fecha_inicio_pautada, 
-        fecha_fin_pautada, 
-        es_oneway, 
-        monto_total, 
-        monto_sena, 
-        estado_reserva 
-    FROM alquileres;
+    SELECT * FROM alquileres;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_listar_alquileres_extras` ()   BEGIN
@@ -330,6 +325,10 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_listar_traslados` ()   BEGIN
     SELECT * FROM traslados_vehiculos;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_listar_traslados_vehiculos` ()   BEGIN
+    SELECT * FROM traslados_vehiculos;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_listar_usuarios` ()   BEGIN
     SELECT * FROM usuarios;
 END$$
@@ -338,19 +337,19 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_listar_vehiculos` ()   BEGIN
     SELECT * FROM vehiculos;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_alquiler` (IN `p_id_alquiler` INT, IN `p_id_cliente` INT, IN `p_id_vehiculo` INT, IN `p_id_sucursal_retiro` INT, IN `p_id_sucursal_devolucion` INT, IN `p_fecha_inicio_pautada` DATETIME, IN `p_fecha_fin_pautada` DATETIME, IN `p_es_oneway` TINYINT, IN `p_monto_total` DECIMAL(10,2), IN `p_monto_sena` DECIMAL(10,2), IN `p_estado_reserva` VARCHAR(50))   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_alquiler` (IN `p_id` INT, IN `p_id_cliente` INT, IN `p_id_vehiculo` INT, IN `p_id_sucursal_retiro` INT, IN `p_id_sucursal_devolucion` INT, IN `p_fecha_inicio_pautada` DATETIME, IN `p_fecha_fin_pautada` DATETIME, IN `p_es_oneway` BOOLEAN, IN `p_monto_total` DECIMAL(10,2), IN `p_monto_sena` DECIMAL(10,2), IN `p_estado_reserva` VARCHAR(30))   BEGIN
     UPDATE alquileres 
-    SET id_cliente = p_id_cliente, 
-        id_vehiculo = p_id_vehiculo, 
-        id_sucursal_retiro = p_id_sucursal_retiro, 
-        id_sucursal_devolucion = p_id_sucursal_devolucion, 
-        fecha_inicio_pautada = p_fecha_inicio_pautada, 
-        fecha_fin_pautada = p_fecha_fin_pautada, 
-        es_oneway = p_es_oneway, 
-        monto_total = p_monto_total, 
-        monto_sena = p_monto_sena, 
+    SET id_cliente = p_id_cliente,
+        id_vehiculo = p_id_vehiculo,
+        id_sucursal_retiro = p_id_sucursal_retiro,
+        id_sucursal_devolucion = p_id_sucursal_devolucion,
+        fecha_inicio_pautada = p_fecha_inicio_pautada,
+        fecha_fin_pautada = p_fecha_fin_pautada,
+        es_oneway = p_es_oneway,
+        monto_total = p_monto_total,
+        monto_sena = p_monto_sena,
         estado_reserva = p_estado_reserva
-    WHERE id_alquiler = p_id_alquiler;
+    WHERE id_alquiler = p_id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_alquiler_extra` (IN `p_id_alquiler` INT, IN `p_id_extra` INT, IN `p_cantidad` INT)   BEGIN
@@ -359,11 +358,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_alquiler_extra` (IN `p
     WHERE id_alquiler = p_id_alquiler AND id_extra = p_id_extra;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_categoria` (IN `p_id_categoria` INT, IN `p_nombre_categoria` VARCHAR(50), IN `p_descripcion` TEXT, IN `p_tarifa_base_diaria` DECIMAL(10,2))   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_categoria` (IN `p_id_categoria` INT, IN `p_nombre_categoria` VARCHAR(50), IN `p_descripcion` TEXT, IN `p_tarifa_base_dia` DECIMAL(10,2))   BEGIN
     UPDATE categorias_vehiculos 
     SET nombre_categoria = p_nombre_categoria, 
         descripcion = p_descripcion, 
-        tarifa_base_diaria = p_tarifa_base_diaria
+        tarifa_base_dia = p_tarifa_base_dia
     WHERE id_categoria = p_id_categoria;
 END$$
 
@@ -379,26 +378,26 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_checkin_checkout` (IN 
     WHERE id_registro = p_id_registro;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_cliente` (IN `p_id_cliente` INT, IN `p_dni` VARCHAR(20), IN `p_licencia_conducir` VARCHAR(50), IN `p_domicilio` VARCHAR(200), IN `p_foto_identificacion_url` VARCHAR(255), IN `p_fecha_nacimiento` DATE, IN `p_es_apto_lujo` TINYINT)   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_cliente` (IN `p_id_cliente` INT, IN `p_dni` VARCHAR(20), IN `p_licencia_conducir` VARCHAR(50), IN `p_domicilio` VARCHAR(150), IN `p_foto_identificacion_url` VARCHAR(255), IN `p_fecha_nacimiento` DATE, IN `p_es_apto_lujo` BOOLEAN)   BEGIN
     UPDATE clientes 
-    SET dni = p_dni, 
-        licencia_conducir = p_licencia_conducir, 
-        domicilio = p_domicilio, 
-        foto_identificacion_url = p_foto_identificacion_url, 
-        fecha_nacimiento = p_fecha_nacimiento, 
+    SET dni = p_dni,
+        licencia_conducir = p_licencia_conducir,
+        domicilio = p_domicilio,
+        foto_identificacion_url = p_foto_identificacion_url,
+        fecha_nacimiento = p_fecha_nacimiento,
         es_apto_lujo = p_es_apto_lujo
     WHERE id_cliente = p_id_cliente;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_foto_inspeccion` (IN `p_id_foto` INT, IN `p_id_registro` INT, IN `p_foto_url` VARCHAR(255), IN `p_observacion_dano` TEXT)   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_foto_inspeccion` (IN `p_id` INT, IN `p_id_registro` INT, IN `p_foto_url` VARCHAR(255), IN `p_observacion_dano` TEXT)   BEGIN
     UPDATE fotos_inspecciones 
     SET id_registro = p_id_registro, 
         foto_url = p_foto_url, 
         observacion_dano = p_observacion_dano
-    WHERE id_foto = p_id_foto;
+    WHERE id_foto = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_mantenimiento` (IN `p_id_mantenimiento` INT, IN `p_id_vehiculo` INT, IN `p_tipo_mantenimiento` VARCHAR(50), IN `p_fecha_ingreso` DATE, IN `p_fecha_egreso_estimada` DATE, IN `p_costo_total` DECIMAL(10,2), IN `p_taller_mecanico` VARCHAR(100), IN `p_detalle_trabajo` TEXT)   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_mantenimiento` (IN `p_id` INT, IN `p_id_vehiculo` INT, IN `p_tipo_mantenimiento` VARCHAR(50), IN `p_fecha_ingreso` DATE, IN `p_fecha_egreso_estimada` DATE, IN `p_costo_total` DECIMAL(10,2), IN `p_taller_mecanico` VARCHAR(100), IN `p_detalle_trabajo` TEXT)   BEGIN
     UPDATE mantenimientos 
     SET id_vehiculo = p_id_vehiculo, 
         tipo_mantenimiento = p_tipo_mantenimiento, 
@@ -407,64 +406,64 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_mantenimiento` (IN `p_
         costo_total = p_costo_total, 
         taller_mecanico = p_taller_mecanico, 
         detalle_trabajo = p_detalle_trabajo
-    WHERE id_mantenimiento = p_id_mantenimiento;
+    WHERE id_mantenimiento = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_marca` (IN `p_id_marca` INT, IN `p_nombre_marca` VARCHAR(50))   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_marca` (IN `p_id` INT, IN `p_nombre_marca` VARCHAR(50))   BEGIN
     UPDATE marcas 
     SET nombre_marca = p_nombre_marca
-    WHERE id_marca = p_id_marca;
+    WHERE id_marca = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_metodo_pago` (IN `p_id_metodo_pago` INT, IN `p_nombre_metodo` VARCHAR(50), IN `p_requiere_comprobante` TINYINT)   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_metodo_pago` (IN `p_id` INT, IN `p_nombre_metodo` VARCHAR(50), IN `p_requiere_comprobante` BOOLEAN)   BEGIN
     UPDATE metodos_pagos 
-    SET nombre_metodo = p_nombre_metodo, 
+    SET nombre_metodo = p_nombre_metodo,
         requiere_comprobante = p_requiere_comprobante
-    WHERE id_metodo_pago = p_id_metodo_pago;
+    WHERE id_metodo_pago = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_modelo` (IN `p_id_modelo` INT, IN `p_id_marca` INT, IN `p_nombre_modelo` VARCHAR(50), IN `p_anio` INT, IN `p_imagen` VARCHAR(100))   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_modelo` (IN `p_id` INT, IN `p_id_marca` INT, IN `p_nombre_modelo` VARCHAR(50), IN `p_anio` INT, IN `p_imagen` VARCHAR(255))   BEGIN
     UPDATE modelos 
-    SET id_marca = p_id_marca, 
-        nombre_modelo = p_nombre_modelo, 
-        anio = p_anio, 
+    SET id_marca = p_id_marca,
+        nombre_modelo = p_nombre_modelo,
+        anio = p_anio,
         imagen = p_imagen
-    WHERE id_modelo = p_id_modelo;
+    WHERE id_modelo = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_opcional_extra` (IN `p_id_extra` INT, IN `p_nombre_extra` VARCHAR(50), IN `p_descripcion` TEXT, IN `p_precio_diario` DECIMAL(8,2))   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_opcional_extra` (IN `p_id` INT, IN `p_nombre_extra` VARCHAR(50), IN `p_descripcion` TEXT, IN `p_precio_diario` DECIMAL(10,2))   BEGIN
     UPDATE opcionales_extras 
-    SET nombre_extra = p_nombre_extra, 
-        descripcion = p_descripcion, 
+    SET nombre_extra = p_nombre_extra,
+        descripcion = p_descripcion,
         precio_diario = p_precio_diario
-    WHERE id_extra = p_id_extra;
+    WHERE id_extra = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_pago` (IN `p_id_pago` INT, IN `p_id_alquiler` INT, IN `p_id_metodo_pago` INT, IN `p_monto` DECIMAL(12,2), IN `p_fecha_pago` DATETIME, IN `p_estado_pago` VARCHAR(50), IN `p_numero_comprobante` VARCHAR(100))   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_pago` (IN `p_id` INT, IN `p_id_alquiler` INT, IN `p_id_metodo_pago` INT, IN `p_monto` DECIMAL(10,2), IN `p_fecha_pago` DATETIME, IN `p_estado_pago` VARCHAR(30), IN `p_numero_comprobante` VARCHAR(50))   BEGIN
     UPDATE pagos 
-    SET id_alquiler = p_id_alquiler, 
-        id_metodo_pago = p_id_metodo_pago, 
-        monto = p_monto, 
-        fecha_pago = p_fecha_pago, 
-        estado_pago = p_estado_pago, 
+    SET id_alquiler = p_id_alquiler,
+        id_metodo_pago = p_id_metodo_pago,
+        monto = p_monto,
+        fecha_pago = p_fecha_pago,
+        estado_pago = p_estado_pago,
         numero_comprobante = p_numero_comprobante
-    WHERE id_pago = p_id_pago;
+    WHERE id_pago = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_rol` (IN `p_id_rol` INT, IN `p_nombre_rol` VARCHAR(50), IN `p_descripcion` TEXT)   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_rol` (IN `p_id` INT, IN `p_nombre_rol` VARCHAR(50), IN `p_descripcion` TEXT)   BEGIN
     UPDATE roles 
-    SET nombre_rol = p_nombre_rol, 
+    SET nombre_rol = p_nombre_rol,
         descripcion = p_descripcion
-    WHERE id_rol = p_id_rol;
+    WHERE id_rol = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_sucursal` (IN `p_id_sucursal` INT, IN `p_nombre` VARCHAR(100), IN `p_direccion` VARCHAR(200), IN `p_ciudad` VARCHAR(100), IN `p_activa` TINYINT)   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_sucursal` (IN `p_id` INT, IN `p_nombre` VARCHAR(100), IN `p_direccion` VARCHAR(150), IN `p_ciudad` VARCHAR(50), IN `p_activa` BOOLEAN)   BEGIN
     UPDATE sucursales 
-    SET nombre = p_nombre, 
-        direccion = p_direccion, 
-        ciudad = p_ciudad, 
+    SET nombre = p_nombre,
+        direccion = p_direccion,
+        ciudad = p_ciudad,
         activa = p_activa
-    WHERE id_sucursal = p_id_sucursal;
+    WHERE id_sucursal = p_id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_traslado` (IN `p_id_traslado` INT, IN `p_id_vehiculo` INT, IN `p_id_sucursal_origen` INT, IN `p_id_sucursal_destino` INT, IN `p_id_usuario_chofer` INT, IN `p_fecha_salida` DATETIME, IN `p_fecha_llegada` DATETIME, IN `p_observaciones` TEXT)   BEGIN
@@ -479,33 +478,46 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_traslado` (IN `p_id_tr
     WHERE id_traslado = p_id_traslado;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_usuario` (IN `p_id_usuario` INT, IN `p_id_rol` INT, IN `p_email` VARCHAR(150), IN `p_password_hash` VARCHAR(255), IN `p_nombre` VARCHAR(100), IN `p_apellido` VARCHAR(100), IN `p_dni` VARCHAR(8), IN `p_cuil` VARCHAR(20), IN `p_telefono` VARCHAR(30), IN `p_intentos_fallidos` INT, IN `p_cuenta_bloqueada` TINYINT, IN `p_fecha_nacimiento` DATE)   BEGIN
-    UPDATE usuarios 
-    SET id_rol = p_id_rol, 
-        email = p_email, 
-        password_hash = p_password_hash, 
-        nombre = p_nombre, 
-        apellido = p_apellido, 
-        dni = p_dni, 
-        cuil = p_cuil, 
-        telefono = p_telefono, 
-        intentos_fallidos = p_intentos_fallidos, 
-        cuenta_bloqueada = p_cuenta_bloqueada, 
-        fecha_nacimiento = p_fecha_nacimiento
-    WHERE id_usuario = p_id_usuario;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_traslado_vehiculo` (IN `p_id` INT, IN `p_id_vehiculo` INT, IN `p_id_sucursal_origen` INT, IN `p_id_sucursal_destino` INT, IN `p_id_usuario_chofer` INT, IN `p_fecha_salida` DATETIME, IN `p_fecha_llegada` DATETIME, IN `p_observaciones` TEXT)   BEGIN
+    UPDATE traslados_vehiculos 
+    SET id_vehiculo = p_id_vehiculo,
+        id_sucursal_origen = p_id_sucursal_origen,
+        id_sucursal_destino = p_id_sucursal_destino,
+        id_usuario_chofer = p_id_usuario_chofer,
+        fecha_salida = p_fecha_salida,
+        fecha_llegada = p_fecha_llegada,
+        observaciones = p_observaciones
+    WHERE id_traslado = p_id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_vehiculo` (IN `p_id_vehiculo` INT, IN `p_patente` VARCHAR(15), IN `p_id_modelo` INT, IN `p_id_categoria` INT, IN `p_id_sucursal_actual` INT, IN `p_kilometraje_actual` INT, IN `p_estado` VARCHAR(50), IN `p_vencimiento_seguro` DATE, IN `p_vencimiento_patente` DATE)   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_usuario` (IN `p_id` INT, IN `p_id_rol` INT, IN `p_email` VARCHAR(100), IN `p_password_hash` VARCHAR(255), IN `p_nombre` VARCHAR(50), IN `p_apellido` VARCHAR(50), IN `p_dni` VARCHAR(20), IN `p_cuil` VARCHAR(20), IN `p_telefono` VARCHAR(20), IN `p_intentos_fallidos` INT, IN `p_cuenta_bloqueada` BOOLEAN, IN `p_fecha_creacion` DATETIME, IN `p_fecha_nacimiento` DATE)   BEGIN
+    UPDATE usuarios 
+    SET id_rol = p_id_rol,
+        email = p_email,
+        password_hash = p_password_hash,
+        nombre = p_nombre,
+        apellido = p_apellido,
+        dni = p_dni,
+        cuil = p_cuil,
+        telefono = p_telefono,
+        intentos_fallidos = p_intentos_fallidos,
+        cuenta_bloqueada = p_cuenta_bloqueada,
+        fecha_creacion = p_fecha_creacion,
+        fecha_nacimiento = p_fecha_nacimiento
+    WHERE id_usuario = p_id;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_modificar_vehiculo` (IN `p_id` INT, IN `p_patente` VARCHAR(20), IN `p_id_modelo` INT, IN `p_id_categoria` INT, IN `p_id_sucursal_actual` INT, IN `p_kilometraje_actual` INT, IN `p_estado` VARCHAR(30), IN `p_vencimiento_seguro` DATE, IN `p_vencimiento_patente` DATE)   BEGIN
     UPDATE vehiculos 
-    SET patente = p_patente, 
-        id_modelo = p_id_modelo, 
-        id_categoria = p_id_categoria, 
-        id_sucursal_actual = p_id_sucursal_actual, 
-        kilometraje_actual = p_kilometraje_actual, 
-        estado = p_estado, 
-        vencimiento_seguro = p_vencimiento_seguro, 
+    SET patente = p_patente,
+        id_modelo = p_id_modelo,
+        id_categoria = p_id_categoria,
+        id_sucursal_actual = p_id_sucursal_actual,
+        kilometraje_actual = p_kilometraje_actual,
+        estado = p_estado,
+        vencimiento_seguro = p_vencimiento_seguro,
         vencimiento_patente = p_vencimiento_patente
-    WHERE id_vehiculo = p_id_vehiculo;
+    WHERE id_vehiculo = p_id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obtener_todos_usuarios` ()   BEGIN
@@ -528,11 +540,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_validar_login` (IN `p_email` VAR
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_verificar_alquiler_activo` (IN `p_id_cliente` INT)   BEGIN
-    SELECT COUNT(*) AS total
-    FROM alquileres 
-    WHERE id_cliente = p_id_cliente 
-      AND estado_reserva = 'RESERVADA' 
-      AND fecha_fin_pautada >= NOW();
+    SELECT COUNT(*) AS total FROM alquileres WHERE id_cliente = p_id_cliente AND estado_reserva = 'ACTIVO';
 END$$
 
 DELIMITER ;
@@ -573,9 +581,11 @@ INSERT INTO `alquileres` (`id_alquiler`, `id_cliente`, `id_vehiculo`, `id_sucurs
 (8, 70, 13, 1, 1, '2026-11-02 17:56:56', '2026-11-02 03:00:00', '2026-11-03 03:00:00', 0, 0.00, 52000.00, 'CANCELADA'),
 (9, 70, 36, 1, 1, '2026-11-02 18:00:57', '2026-11-02 03:00:00', '2026-11-05 03:00:00', 0, 0.00, 240000.00, 'CANCELADA'),
 (10, 70, 6, 1, 1, '2026-11-04 16:12:31', '2026-11-02 03:00:00', '2026-11-12 03:00:00', 0, 450000.00, 450000.00, 'CANCELADA'),
-(11, 70, 1, 1, 1, '2026-11-04 16:12:31', '2026-11-04 03:00:00', '2026-11-12 03:00:00', 0, 440000.00, 440000.00, 'RESERVADA'),
+(11, 70, 1, 1, 1, '2026-11-04 16:12:31', '2026-11-04 03:00:00', '2026-11-12 03:00:00', 0, 440000.00, 440000.00, 'CANCELADA'),
 (12, 86, 28, 1, 1, '2026-11-04 16:38:47', '2026-11-04 03:00:00', '2026-11-05 03:00:00', 0, 87000.00, 87000.00, 'CANCELADA'),
-(13, 86, 41, 1, 1, '2026-11-04 16:47:38', '2026-11-04 03:00:00', '2026-11-23 03:00:00', 0, 380000.00, 380000.00, 'CANCELADA');
+(13, 86, 41, 1, 1, '2026-11-04 16:47:38', '2026-11-04 03:00:00', '2026-11-23 03:00:00', 0, 380000.00, 380000.00, 'CANCELADA'),
+(14, 70, 36, 1, 1, '2026-11-08 02:11:22', '2026-11-08 03:00:00', '2026-11-12 03:00:00', 0, 340000.00, 340000.00, 'RESERVADA'),
+(18, 81, 1, 1, 2, '2026-11-08 15:00:00', '2026-11-10 13:00:00', '2026-11-16 21:00:00', 1, 165000.00, 33000.00, '');
 
 --
 -- Disparadores `alquileres`
@@ -668,7 +678,7 @@ CREATE TABLE `categorias_vehiculos` (
 --
 
 INSERT INTO `categorias_vehiculos` (`id_categoria`, `nombre_categoria`, `descripcion`, `tarifa_base_dia`) VALUES
-(1, 'ECONOMICO', 'Autos compactos de bajo consumo', 35000.00),
+(1, 'SUV Premium Actualizada', 'Vehículos todoterreno de alta gama', 95000.00),
 (2, 'SEDAN', 'Vehículos confortables de 4 puertas', 50000.00),
 (3, 'CAMIONETA', 'Pick-ups y vehículos 4x4', 85000.00);
 
@@ -694,7 +704,7 @@ CREATE TABLE `checkins_checkouts` (
 --
 
 INSERT INTO `checkins_checkouts` (`id_registro`, `id_alquiler`, `id_usuario_empleado`, `tipo`, `fecha_hora_real`, `kilometraje`, `nivel_combustible`, `observaciones`) VALUES
-(1, 1, 2, 'ENTREGA', '2026-09-28 20:15:31', 32000, 'LLENO', 'Vehículo entregado en óptimas condiciones.');
+(2, 1, 1, '', '2026-11-07 13:30:00', 15000, 'LLENO', 'Vehículo entregado en perfectas condiciones');
 
 -- --------------------------------------------------------
 
@@ -885,7 +895,7 @@ CREATE TABLE `opcionales_extras` (
 --
 
 INSERT INTO `opcionales_extras` (`id_extra`, `nombre_extra`, `descripcion`, `precio_diario`) VALUES
-(1, 'Silla de Bebé', 'Silla de seguridad para niños', 5000.00),
+(1, 'Silla de Bebé Premium', 'Silla de seguridad ajustable y reclinable para niños', 7000.00),
 (2, 'GPS', 'Navegador satelital', 3000.00);
 
 -- --------------------------------------------------------
@@ -925,7 +935,10 @@ INSERT INTO `pagos` (`id_pago`, `id_alquiler`, `id_metodo_pago`, `monto`, `fecha
 (41, 10, 2, 450000.00, '2026-11-02 21:03:26', 'APROBADO', 'COMP-321973.0'),
 (42, 11, 2, 440000.00, '2026-11-04 16:10:31', 'APROBADO', 'COMP-709606'),
 (43, 12, 2, 87000.00, '2026-11-04 16:38:47', 'APROBADO', 'COMP-516237'),
-(44, 13, 2, 380000.00, '2026-11-04 16:47:38', 'APROBADO', 'COMP-830060');
+(44, 13, 2, 380000.00, '2026-11-04 16:47:38', 'APROBADO', 'COMP-830060'),
+(46, 14, 2, 340000.00, '2026-11-08 02:11:22', 'APROBADO', 'COMP-787302'),
+(47, 17, 2, 150000.00, '2026-11-08 02:59:37', 'APROBADO', 'COMP-540355'),
+(48, 18, 2, 150000.00, '2026-11-08 03:04:42', 'APROBADO', 'COMP-155748');
 
 -- --------------------------------------------------------
 
@@ -1060,7 +1073,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `id_rol`, `email`, `password_hash`, `nombre`, `apellido`, `dni`, `cuil`, `telefono`, `intentos_fallidos`, `cuenta_bloqueada`, `fecha_creacion`, `fecha_nacimiento`) VALUES
-(1, 1, 'admin@autorent.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'Carlos', 'Gómez', '', '20-30111222-8', '1144556677', 0, 0, '2026-09-28 20:15:30', NULL),
+(1, 1, 'carlos.perez.actualizado@email.com', 'hash_seguro_modificado', 'Carlos Alberto', 'Pérez', '35123456', '2012345678', '1199887766', 0, 0, '2026-11-08 13:30:00', '1995-05-15'),
 (2, 2, 'empleado1@autorent.com', 'hash_emp_123', 'Lucía', 'Fernández', '', '27-35222333-4', '1155667788', 0, 0, '2026-09-28 20:15:30', NULL),
 (66, 3, 'ian@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'ian', 'vecchio', '99999998', '20957454504', '8888888888', 0, 0, NULL, '2000-11-11'),
 (67, 3, 'leo@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'leos', 'Quintero', '33333333', '20957653504', '1233333333', 0, 0, NULL, '2000-02-20'),
@@ -1291,6 +1304,114 @@ INSERT INTO `vehiculos` (`id_vehiculo`, `patente`, `id_modelo`, `id_categoria`, 
 (190, 'EE528CC', 39, 2, 29, 0, 'DISPONIBLE', '2026-10-10', '2027-04-10'),
 (191, 'EE529DD', 40, 2, 30, 0, 'DISPONIBLE', '2026-09-05', '2027-03-05');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `vw_alquileres_activos`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `vw_alquileres_activos` (
+`correo_cliente` varchar(150)
+,`vehiculo_patente` varchar(15)
+,`estado` enum('RESERVADA','EN_CURSO','FINALIZADA','CANCELADA')
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `vw_catalogo_vehiculos`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `vw_catalogo_vehiculos` (
+`patente` varchar(15)
+,`kilometraje_actual` int(11)
+,`estado` enum('DISPONIBLE','ALQUILADO','EN_MANTENIMIENTO','REPARACION')
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `vw_clientes_registrados`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `vw_clientes_registrados` (
+`nombre` varchar(100)
+,`apellido` varchar(100)
+,`email` varchar(150)
+,`dni` varchar(8)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `vw_detalle_alquileres`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `vw_detalle_alquileres` (
+`cliente` varchar(201)
+,`vehiculo_patente` varchar(15)
+,`inicio` datetime
+,`fin` datetime
+,`total` decimal(12,2)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `vw_vehiculos_disponibles`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `vw_vehiculos_disponibles` (
+`patente` varchar(15)
+,`kilometraje_actual` int(11)
+,`estado` enum('DISPONIBLE','ALQUILADO','EN_MANTENIMIENTO','REPARACION')
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `vw_alquileres_activos`
+--
+DROP TABLE IF EXISTS `vw_alquileres_activos`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_alquileres_activos`  AS SELECT `u`.`email` AS `correo_cliente`, `v`.`patente` AS `vehiculo_patente`, `a`.`estado_reserva` AS `estado` FROM ((`alquileres` `a` join `usuarios` `u` on(`a`.`id_cliente` = `u`.`id_usuario`)) join `vehiculos` `v` on(`a`.`id_vehiculo` = `v`.`id_vehiculo`)) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `vw_catalogo_vehiculos`
+--
+DROP TABLE IF EXISTS `vw_catalogo_vehiculos`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_catalogo_vehiculos`  AS SELECT `vehiculos`.`patente` AS `patente`, `vehiculos`.`kilometraje_actual` AS `kilometraje_actual`, `vehiculos`.`estado` AS `estado` FROM `vehiculos` ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `vw_clientes_registrados`
+--
+DROP TABLE IF EXISTS `vw_clientes_registrados`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_clientes_registrados`  AS SELECT `usuarios`.`nombre` AS `nombre`, `usuarios`.`apellido` AS `apellido`, `usuarios`.`email` AS `email`, `usuarios`.`dni` AS `dni` FROM `usuarios` ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `vw_detalle_alquileres`
+--
+DROP TABLE IF EXISTS `vw_detalle_alquileres`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_detalle_alquileres`  AS SELECT concat(`u`.`nombre`,' ',`u`.`apellido`) AS `cliente`, `v`.`patente` AS `vehiculo_patente`, `a`.`fecha_inicio_pautada` AS `inicio`, `a`.`fecha_fin_pautada` AS `fin`, `a`.`monto_total` AS `total` FROM ((`alquileres` `a` join `usuarios` `u` on(`a`.`id_cliente` = `u`.`id_usuario`)) join `vehiculos` `v` on(`a`.`id_vehiculo` = `v`.`id_vehiculo`)) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `vw_vehiculos_disponibles`
+--
+DROP TABLE IF EXISTS `vw_vehiculos_disponibles`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_vehiculos_disponibles`  AS SELECT `vehiculos`.`patente` AS `patente`, `vehiculos`.`kilometraje_actual` AS `kilometraje_actual`, `vehiculos`.`estado` AS `estado` FROM `vehiculos` WHERE `vehiculos`.`estado` = 'DISPONIBLE' ;
+
 --
 -- Índices para tablas volcadas
 --
@@ -1433,91 +1554,91 @@ ALTER TABLE `vehiculos`
 -- AUTO_INCREMENT de la tabla `alquileres`
 --
 ALTER TABLE `alquileres`
-  MODIFY `id_alquiler` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_alquiler` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias_vehiculos`
 --
 ALTER TABLE `categorias_vehiculos`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `checkins_checkouts`
 --
 ALTER TABLE `checkins_checkouts`
-  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `fotos_inspecciones`
 --
 ALTER TABLE `fotos_inspecciones`
-  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `mantenimientos`
 --
 ALTER TABLE `mantenimientos`
-  MODIFY `id_mantenimiento` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mantenimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `marcas`
 --
 ALTER TABLE `marcas`
-  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `metodos_pagos`
 --
 ALTER TABLE `metodos_pagos`
-  MODIFY `id_metodo_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_metodo_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `modelos`
 --
 ALTER TABLE `modelos`
-  MODIFY `id_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de la tabla `opcionales_extras`
 --
 ALTER TABLE `opcionales_extras`
-  MODIFY `id_extra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_extra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `pagos`
 --
 ALTER TABLE `pagos`
-  MODIFY `id_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `sucursales`
 --
 ALTER TABLE `sucursales`
-  MODIFY `id_sucursal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_sucursal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT de la tabla `traslados_vehiculos`
 --
 ALTER TABLE `traslados_vehiculos`
-  MODIFY `id_traslado` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_traslado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT de la tabla `vehiculos`
 --
 ALTER TABLE `vehiculos`
-  MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=192;
+  MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
 
 --
 -- Restricciones para tablas volcadas
