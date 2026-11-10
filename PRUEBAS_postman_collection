@@ -1,0 +1,2390 @@
+{
+  "info": {
+    "_postman_id": "8b3f6b18-ece6-467b-a77f-1970f132e917",
+    "name": "categorias_vehiculos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "59088898",
+    "_collection_link": "https://go.postman.co/collection/59088898-8b3f6b18-ece6-467b-a77f-1970f132e917?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "checking...",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idAlquiler\": 1,\r\n  \"idUsuarioEmpleado\": 1,\r\n  \"tipo\": \"CHECKOUT\",\r\n  \"fechaHoraReal\": \"2026-11-07 10:30:00\",\r\n  \"kilometraje\": 15000,\r\n  \"nivelCombustible\": \"LLENO\",\r\n  \"observaciones\": \"Vehículo entregado en perfectas condiciones\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/checkins",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "checkins"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/checkins?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "checkins"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/checkins",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "checkins"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idRegistro\": 1,\r\n  \"idAlquiler\": 1,\r\n  \"idUsuarioEmpleado\": 1,\r\n  \"tipo\": \"CHECKIN\",\r\n  \"fechaHoraReal\": \"2026-11-10 18:00:00\",\r\n  \"kilometraje\": 15600,\r\n  \"nivelCombustible\": \"MEDIO\",\r\n  \"observaciones\": \"Vehículo devuelto con detalle de suciedad leve\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/checkins",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "checkins"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/checkins?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "checkins"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "foto....",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idRegistro\": 2,\r\n  \"fotoUrl\": \"/uploads/inspecciones/foto_frontal.jpg\",\r\n  \"observacionDano\": \"Rayón leve en el paragolpes delantero\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/fotos-inspeccion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "fotos-inspeccion"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/fotos-inspeccion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "fotos-inspeccion"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/fotos-inspeccion?ID=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "fotos-inspeccion"
+              ],
+              "query": [
+                {
+                  "key": "ID",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idFoto\": 9,\r\n  \"idRegistro\": 2,\r\n  \"fotoUrl\": \"/uploads/inspecciones/foto_frontal_actualizada.jpg\",\r\n  \"observacionDano\": \"Daño actualizado y verificado\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/fotos-inspeccion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "fotos-inspeccion"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/fotos-inspeccion?id=9&=",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "fotos-inspeccion"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "9"
+                },
+                {
+                  "key": "",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "mantenimientos",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idVehiculo\": 1,\r\n  \"tipoMantenimiento\": \"PREVENTIVO\",\r\n  \"fechaIngreso\": \"2026-11-08\",\r\n  \"fechaEgresoEstimada\": \"2026-11-10\",\r\n  \"costoTotal\": 45000.00,\r\n  \"tallerMecanico\": \"Taller Mecánico Central\",\r\n  \"detalleTrabajo\": \"Cambio de aceite, filtros y revisión general de frenos\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/mantenimientos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "mantenimientos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/mantenimientos?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "mantenimientos"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idMantenimiento\": 1,\r\n  \"idVehiculo\": 1,\r\n  \"tipoMantenimiento\": \"CORRECTIVO\",\r\n  \"fechaIngreso\": \"2026-11-08\",\r\n  \"fechaEgresoEstimada\": \"2026-11-12\",\r\n  \"costoTotal\": 85000.00,\r\n  \"tallerMecanico\": \"Taller Mecánico Central\",\r\n  \"detalleTrabajo\": \"Cambio de pastillas de freno y rectificación de discos\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/mantenimientos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "mantenimientos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/mantenimientos?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "mantenimientos"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "marca",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreMarca\": \"pene\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/marcas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "marcas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/marcas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "marcas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/marcas?id=11",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "marcas"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "11"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idMarca\": 11,\r\n  \"nombreMarca\": \"grande\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/marcas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "marcas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/marcas?id=11",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "marcas"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "11"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "metodospagos",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreMetodo\": \"tizi\",\r\n  \"requiereComprobante\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/metodos-pago",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "metodos-pago"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/metodos-pago",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "metodos-pago"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/metodos-pago?id=4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "metodos-pago"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idMetodoPago\": 4,\r\n  \"nombreMetodo\": \"Transferencia Inmediata\",\r\n  \"requiereComprobante\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/metodos-pago",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "metodos-pago"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/metodos-pago?id=4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "metodos-pago"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "modelos",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idMarca\": 1,\r\n  \"nombreModelo\": \"Logan Actualizado\",\r\n  \"anio\": 2024,\r\n  \"imagen\": \"LOGAN_2024.jpg\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/modelos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "modelos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/modelos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "modelos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/modelos?id =1&id=41",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "modelos"
+              ],
+              "query": [
+                {
+                  "key": "id ",
+                  "value": "1"
+                },
+                {
+                  "key": "id",
+                  "value": "41"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idModelo\": 41,\r\n  \"idMarca\": 1,\r\n  \"nombreModelo\": \"Logan Phase 2\",\r\n  \"anio\": 2022,\r\n  \"imagen\": \"LOGAN_2022.jpg\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/modelos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "modelos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/modelos?id =1&id=41",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "modelos"
+              ],
+              "query": [
+                {
+                  "key": "id ",
+                  "value": "1"
+                },
+                {
+                  "key": "id",
+                  "value": "41"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "opcionales..",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreExtra\": \"Silla de pepe\",\r\n  \"descripcion\": \"Silla de seguridad homologada para infantes de 0 a 3 años\",\r\n  \"precioDiario\": 5500.00\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/opcionales-extras",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "opcionales-extras"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/opcionales-extras",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "opcionales-extras"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/opcionales-extras?id=3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "opcionales-extras"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idExtra\": 3,\r\n  \"nombreExtra\": \"Silla de pepe Premium\",\r\n  \"descripcion\": \"Silla de seguridad ajustable y reclinable para niños\",\r\n  \"precioDiario\": 7000.00\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/opcionales-extras",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "opcionales-extras"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/opcionales-extras?id=3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "opcionales-extras"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "pagos",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idAlquiler\": 99,\r\n  \"idMetodoPago\": 2,\r\n  \"monto\": 95000.00,\r\n  \"fechaPago\": \"2026-11-08 14:30:00\",\r\n  \"estadoPago\": \"APROBADO\",\r\n  \"numeroComprobante\": \"COMP-99999.0\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/pagos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "pagos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/pagos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "pagos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/pagos?id=45",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "pagos"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "45"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"idPago\": 45,\r\n  \"idAlquiler\": 99,\r\n  \"idMetodoPago\": 2,\r\n  \"monto\": 95000.00,\r\n  \"fechaPago\": \"2026-11-08 14:30:00\",\r\n  \"estadoPago\": \"APROBADO\",\r\n  \"numeroComprobante\": \"COMP-9933333.0\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/pagos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "pagos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/pagos?id=45",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "pagos"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "45"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "roles",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreRol\": \"tizi\",\r\n  \"descripcion\": \"Acceso total a la gestión del sistema de alquileres\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/roles",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "roles"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/roles?id=4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "roles"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idRol\": 4,\r\n  \"nombreRol\": \"SUPER_ADMIN\",\r\n  \"descripcion\": \"Control total y configuración de parámetros globales\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/roles",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "roles"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/roles?id=4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "roles"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "sucursales",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Sucursal Centro tizi\",\r\n  \"direccion\": \"Av. Corrientes 1234\",\r\n  \"ciudad\": \"Buenos Aires\",\r\n  \"activa\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/sucursales",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "sucursales"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/sucursales?id=49",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "sucursales"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "49"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idSucursal\": 49,\r\n  \"nombre\": \"Sucursal Centro CABA - Principal\",\r\n  \"direccion\": \"Av. Corrientes 1238\",\r\n  \"ciudad\": \"Buenos Aires\",\r\n  \"activa\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/sucursales",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "sucursales"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/sucursales?id=49",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "sucursales"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "49"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "traslados",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idVehiculo\": 1,\r\n  \"idSucursalOrigen\": 1,\r\n  \"idSucursalDestino\": 2,\r\n  \"idUsuarioChofer\": 1,\r\n  \"fechaSalida\": \"2026-11-08 09:00:00\",\r\n  \"fechaLlegada\": \"2026-11-08 13:00:00\",\r\n  \"observaciones\": \"Traslado preventivo entre sucursales\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/traslados",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "traslados"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/traslados",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "traslados"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/traslados?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "traslados"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idTraslado\": 1,\r\n  \"idVehiculo\": 1,\r\n  \"idSucursalOrigen\": 1,\r\n  \"idSucursalDestino\": 2,\r\n  \"idUsuarioChofer\": 1,\r\n  \"fechaSalida\": \"2026-11-08 09:00:00\",\r\n  \"fechaLlegada\": \"2026-11-08 14:00:00\",\r\n  \"observaciones\": \"Traslado finalizado y verificado correctamente\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/traslados",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "traslados"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/traslados?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "traslados"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "usuarios",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idRol\": 1,\r\n  \"email\": \"test.usuario@email.com\",\r\n  \"passwordHash\": \"hash_seguro_123\",\r\n  \"nombre\": \"Carlos\",\r\n  \"apellido\": \"Pérez\",\r\n  \"dni\": \"35123456\",\r\n  \"cuil\": \"20-35123456-9\",\r\n  \"telefono\": \"1144556677\",\r\n  \"intentosFallidos\": 0,\r\n  \"cuentaBloqueada\": false,\r\n  \"fechaCreacion\": \"2026-11-08 10:30:00\",\r\n  \"fechaNacimiento\": \"1995-05-15\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/usuarios?id=87",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "usuarios"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "87"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idUsuario\": 1,\r\n  \"idRol\": 1,\r\n  \"email\": \"carlos.perez.actualizado@email.com\",\r\n  \"passwordHash\": \"hash_seguro_modificado\",\r\n  \"nombre\": \"Carlos Alberto\",\r\n  \"apellido\": \"Pérez\",\r\n  \"dni\": \"35123456\",\r\n  \"cuil\": \"2012345678\",\r\n  \"telefono\": \"1199887766\",\r\n  \"intentosFallidos\": 0,\r\n  \"cuentaBloqueada\": false,\r\n  \"fechaCreacion\": \"2026-11-08 10:30:00\",\r\n  \"fechaNacimiento\": \"1995-05-15\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/usuarios?id=87",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "usuarios"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "87"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"idUsuario\": 86,\n    \"telefono\": \"1199998888\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "vehiculos",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/vehiculos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "vehiculos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"patente\": \"AB123CD\",\r\n  \"idModelo\": 26,\r\n  \"idCategoria\": 1,\r\n  \"idSucursalActual\": 1,\r\n  \"kilometrajeActual\": 15000,\r\n  \"estado\": \"DISPONIBLE\",\r\n  \"vencimientoSeguro\": \"2027-05-15\",\r\n  \"vencimientoPatente\": \"2027-01-10\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/vehiculos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "vehiculos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/vehiculos?id=192",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "vehiculos"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "192"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idVehiculo\": 192,\r\n  \"patente\": \"AB123CD\",\r\n  \"idModelo\": 26,\r\n  \"idCategoria\": 1,\r\n  \"idSucursalActual\": 2,\r\n  \"kilometrajeActual\": 16500,\r\n  \"estado\": \"ALQUILADO\",\r\n  \"vencimientoSeguro\": \"2027-05-15\",\r\n  \"vencimientoPatente\": \"2027-01-10\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/vehiculos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "vehiculos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/vehiculos?id=192",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "vehiculos"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "192"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "alquileres",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/alquileres",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "alquileres"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idCliente\": 81,\r\n  \"idVehiculo\": 1,\r\n  \"idSucursalRetiro\": 1,\r\n  \"idSucursalDevolucion\": 2,\r\n  \"fechaReserva\": \"2026-11-08 12:00:00\",\r\n  \"fechaInicioPautada\": \"2026-11-10 09:00:00\",\r\n  \"fechaFinPautada\": \"2026-11-15 18:00:00\",\r\n  \"esOneway\": true,\r\n  \"montoTotal\": 150000.00,\r\n  \"montoSena\": 30000.00,\r\n  \"estadoReserva\": \"ACTIVO\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/alquileres",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "alquileres"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/alquileres?id=18",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "alquileres"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "18"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/alquileres?id=18",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "alquileres"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "18"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idAlquiler\": 18,\r\n  \"idCliente\": 81,\r\n  \"idVehiculo\": 1,\r\n  \"idSucursalRetiro\": 1,\r\n  \"idSucursalDevolucion\": 2,\r\n  \"fechaInicioPautada\": \"2026-11-10 10:00:00\",\r\n  \"fechaFinPautada\": \"2026-11-16 18:00:00\",\r\n  \"esOneway\": true,\r\n  \"montoTotal\": 165000.00,\r\n  \"montoSena\": 33000.00,\r\n  \"estadoReserva\": \"ACTIVO\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/alquileres",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "alquileres"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "alquiler_extra",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/alquileres-extras",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "alquileres-extras"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idAlquiler\": 1,\r\n  \"idExtra\": 1,\r\n  \"cantidad\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/alquileres-extras",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "alquileres-extras"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/alquileres-extras?idAlquiler=1&idExtra=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "alquileres-extras"
+              ],
+              "query": [
+                {
+                  "key": "idAlquiler",
+                  "value": "1"
+                },
+                {
+                  "key": "idExtra",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idAlquiler\": 1,\r\n  \"idExtra\": 1,\r\n  \"cantidad\": 3\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/alquileres-extras",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "alquileres-extras"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/alquileres-extras?idAlquiler=1&idExtra=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "alquileres-extras"
+              ],
+              "query": [
+                {
+                  "key": "idAlquiler",
+                  "value": "1"
+                },
+                {
+                  "key": "idExtra",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "clientes",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/clientes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "clientes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idCliente\": 1,\r\n  \"dni\": \"35123456\",\r\n  \"licenciaConducir\": \"LIC-98765432\",\r\n  \"domicilio\": \"Av. Rivadavia 4500, CABA\",\r\n  \"fotoIdentificacionUrl\": \"dni_frente_carlos.jpg\",\r\n  \"fechaNacimiento\": \"1995-05-15\",\r\n  \"esAptoLujo\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/clientes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "clientes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/clientes?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "clientes"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idCliente\": 1,\r\n  \"dni\": \"35123456\",\r\n  \"licenciaConducir\": \"LIC-98765432-REV2\",\r\n  \"domicilio\": \"Av. Corrientes 2000, CABA\",\r\n  \"fotoIdentificacionUrl\": \"dni_actualizado.jpg\",\r\n  \"fechaNacimiento\": \"1995-05-15\",\r\n  \"esAptoLujo\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/clientes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "AlquilerVehiculos_version_nueva",
+                "api",
+                "clientes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombreCategoria\": \"SUV Familiar\",\r\n  \"descripcion\": \"Vehículos todoterreno amplios\",\r\n  \"tarifaBaseDia\": 75000.00\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/categorias",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "AlquilerVehiculos_version_nueva",
+            "api",
+            "categorias"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/categorias",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "AlquilerVehiculos_version_nueva",
+            "api",
+            "categorias"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/categorias?id=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "AlquilerVehiculos_version_nueva",
+            "api",
+            "categorias"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"idCategoria\": 1,\r\n  \"nombreCategoria\": \"SUV Premium Actualizada\",\r\n  \"descripcion\": \"Vehículos todoterreno de alta gama\",\r\n  \"tarifaBaseDia\": 95000.00\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/categorias",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "AlquilerVehiculos_version_nueva",
+            "api",
+            "categorias"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/AlquilerVehiculos_version_nueva/api/categorias?id=4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "AlquilerVehiculos_version_nueva",
+            "api",
+            "categorias"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "4"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
